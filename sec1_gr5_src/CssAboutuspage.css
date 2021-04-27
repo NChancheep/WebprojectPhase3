@@ -1,0 +1,195 @@
+* {
+  /* font-family: 'Bebas Neue', cursive; */
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+nav {
+  padding: 12px;
+  float: right;
+  margin-right: 2%;
+  color: white;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  text-align: center;
+  padding: 14px 16px;
+
+}
+
+.hamburger {
+  margin: 0;
+  padding: 19px 16px;
+  display: inline-block;
+  position: absolute;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  display: block;
+  background-color: black;
+  margin-bottom: 5px;
+}
+
+.hamburger span:last-child {
+  margin-bottom: 0px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: black;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+  transition: 0.5s;
+}
+
+.sidenav a:hover {
+  color: grey;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 50px;
+  margin-left: 50px;
+}
+
+.section1{
+  height: 400px;
+}
+.section2{
+  height: 400px;
+}
+.section3{
+  height: 400px;
+}
+.section4{
+  height: 400px;
+}
+
+/*.title-left{
+  font-weight: bold;
+  margin: auto;
+  margin-left: 20%;
+}
+.pic-right{
+
+}*/
+
+.topic{
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .rightnav1{
+      display: none;
+  }
+  body { 
+      font-size: 2em; 
+   }
+}
+
+@media screen and (min-width: 1025px) {
+  
+  .rightnav2{
+      display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+  .part2,.part3,.part4,.part5{
+      display: none;
+  }
+  body { 
+      font-size: 2em; 
+   }
+}
+
+@media screen and (min-width: 577px) {
+  
+  .part1{
+      display: none;
+  }
+}
+
+@media screen and (max-width: 1905px) {
+
+  .part2{
+      display: none;
+  }
+  body { 
+      font-size: 2em; 
+   }
+}
+
+@media screen and (min-width: 1906px) {
+  
+  .part3{
+      display: none;
+  }
+}
+
+@media screen and (max-width: 1695px) {
+
+  .part3{
+      display: none;
+  }
+  body { 
+      font-size: 2em; 
+   }
+}
+
+@media screen and (min-width: 1696px) {
+  
+  .part4{
+      display: none;
+  }
+}
+
+@media screen and (max-width: 1403px) {
+
+  .part4{
+      display: none;
+  }
+  body { 
+      font-size: 2em; 
+   }
+}
+
+@media screen and (min-width: 1404px) {
+  
+  .part5{
+      display: none;
+  }
+}
+
+
+
+
+
+
+
+
+

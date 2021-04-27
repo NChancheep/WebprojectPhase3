@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="CssAccountpage.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <title>
+        Account
+    </title>
+    <script>
+        function openNav() {
+            document.getElementById("sidenav").style.width = "200px";
+        }
+
+        function closeNav() {
+            document.getElementById("sidenav").style.width = "0";
+        }
+    </script>
+    <script src="JsAccountpage.js"></script>
+    <script src="JsChecklogin.js"></script>
+</head>
+
+<body onload="myFunction() , alwayscheck()">
+    <main class="container-sd">
+        <header class="row">
+            <div class="Allnav">
+                <div class="col">
+                    <span style="font-size:20px;cursor:pointer" onclick="openNav()">
+                        <label class="hamburger">
+                            <span>&nbsp;</span>
+                            <span>&nbsp;</span>
+                            <span>&nbsp;</span>
+                        </label>
+                    </span>
+                    <div id="sidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="HtmlOurstorypage.html">OUR STORY</a>
+                        <a href="HtmlAboutuspage.html">ABOUT US</a>
+                        <a href="HtmlCategoriespage.html">CATAGORIES</a>
+                        <div id="showSearch"></div>
+                        <div id="showLogin"></div>
+                        <div id="showLogout"></div>
+                    </div>
+                </div>
+                <nav class="col text-right">
+                    <ul class="rightnav1">
+                        <a href="HtmlMainpage.html"><i class=""></i><b>HOME</b></a>
+                        <span id="memberIn1"></span>
+                        <span id="memberOut1"></span>
+                    </ul>
+                    <ul class="rightnav2">
+                        <a href="HtmlMainpage.html"><i class="glyphicon glyphicon-home"></i></a>
+                        <span id="memberIn2"></span>
+                        <span id="memberOut2"></span>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="page-content page-container" id="page-content" style="margin-left: 20%; margin-top: 10%;">
+            <div class="padding">
+                <div class="row container d-flex justify-content-center">
+                    <div class="col-xl-6 col-md-12">
+                        <div class="card" style="overflow: hidden;">
+                            <div class="row m-l-0 m-r-0" style="padding: 0%">
+                                <div class="col-sm-4 bg user-profile">
+                                    <div class="card-block text-center text-white">
+                                        <div style="padding-top: 10%;">
+                                            <span class="f-w-600" id="fNameOut"
+                                                style="font-size: 150%; text-transform:uppercase; margin-right: 2%;"></span>
+                                            <span class="f-w-600" id="lNameOut"
+                                                style="font-size: 150%; text-transform:uppercase;"></span>
+                                            <h6>USER</h6>
+                                        </div>
+                                        <div style="margin-top:10%">
+                                            <input type="button" class="button" style="margin-right:10%"
+                                                onClick="location.href='HtmlReservepage.html'" value='Reserve' />
+                                            <input type="button" class="button"
+                                                onClick="location.href='HtmlSearchpage.html'" value='SEARCH' />
+                                            <div id="adminbutton"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-block">
+                                        <h3 class="m-b-20 p-b-5 f-w-600" style="text-transform: uppercase;">Information
+                                        </h3>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <p class="m-b-10 f-w-600" id="EmailOut">Email</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <p class="m-b-10 f-w-600" id="addressOut">Address</p>
+                                            </div>
+                                        </div>
+                                        <span class="m-b-10 f-w-600">Age:</span>
+                                        <span class="m-b-10 f-w-600" id="ageOut">Age</span>
+                                    </div>
+                                </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="CssCategoriespage.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <title>
+        Categories
+    </title>
+    <script src="JsCategoriespage.js"></script>
+    <script src="JsChecklogin.js"></script>
+    <script>
+        function openNav() {
+            document.getElementById("sidenav").style.width = "200px";
+        }
+
+        function closeNav() {
+            document.getElementById("sidenav").style.width = "0";
+        }
+    </script>
+</head>
+
+<body onload="alwayscheck()">
+    <main class="container-fluid">
+        <header class="row">
+            <div class="col">
+                <span style="font-size:20px;cursor:pointer" onclick="openNav()">
+                    <label class="hamburger">
+                        <span>&nbsp;</span>
+                        <span>&nbsp;</span>
+                        <span>&nbsp;</span>
+                    </label>
+                </span>
+                <div id="sidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="HtmlOurstorypage.html">OUR STORY</a>
+                    <a href="HtmlAboutuspage.html">ABOUT US</a>
+                    <a href="HtmlCategoriespage.html">CATAGORIES</a>
+                    <div id="showSearch"></div>
+                    <div id="showLogin"></div>
+                        <div id="showLogout"></div>
+                </div>
+            </div>
+            <nav class="col text-right">
+                <div class="rightnav1">
+                    <a href="HtmlMainpage.html" class="home1"><b>HOME</b></a>
+                    <span id="memberIn1"></span>
+                    <span id="memberOut1"></span>
+                </div>
+                <div class="rightnav2">
+                    <a href="HtmlMainpage.html" class="home2"><i class="glyphicon glyphicon-home Homebar"></i></a>
+                    <span id="memberIn2"></span>
+                    <span id="memberOut2"></span>
+                </div>
+            </nav>
+
+            <hr>
+        </header>
+
+        <section class="section2 container-sm">
+            <img src="./images/LOGO_Black.png" class="img-fluid" alt="image1">
+            <img src="./images/decoration_line1.png" class="img-fluid" alt="image2" id="imgline">
+            <div class="navlist text-center">
+                <button onclick=menu1()>FOOD</button>
+                <button onclick=menu2()>DRINK</button>
+                <button onclick=menu3()>DESSERT</button>
+                <button onclick=menu4()>BRANCH</button>
+                <div>
+        </section>
+
+        <article>
+            <section class="section3 container-sm">
+                <div id="notice1" Style="text-align: center;">
+                    <h4>Press the button above to see the detail</h4>
+                </div>
+                <div id="food" style="display: none;">
+                    <h1 class="headerMenu">Soup And Salad</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Garden Vegetable Soup</p>
+                        <p class="p" id="menuprice">160.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Italian Style Clam and Mussel Soup</p>
+                        <p class="p" id="menuprice">260.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Prawn Bisque with Fresh Cream</p>
+                        <p class="p" id="menuprice">200.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Mushroom Cream Soup</p>
+                        <p class="p" id="menuprice">180.-</p>
+                        <br>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">French Onion Soup</p>
+                        <p class="p" id="menuprice">160.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Sandwich in a Bowl</p>
+                        <p class="p" id="menuprice">250.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Grilled Vegetable Salad with Pesto Sauce</p>
+                        <p class="p" id="menuprice">180.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fresh Lasagna Salad</p>
+                        <p class="p" id="menuprice">180.-</p>
+                    </div>
+                    <p class="p" id="menuname">Fillet Steak Salad</p>
+                    <p class="p" id="menuprice">340.-</p>
+                    <div class="menu">
+                        <p class="p" id="menuname">Seared Scallop Salad</p>
+                        <p class="p" id="menuprice">490.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Soft-Shell Crab Salad</p>
+                        <p class="p" id="menuprice">360.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fisherman Salad</p>
+                        <p class="p" id="menuprice">380.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fresh Honeydew Melon and Parma Ham Salad</p>
+                        <p class="p" id="menuprice">260.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Grilled Pumpkin and Tofu Salad</p>
+                        <p class="p" id="menuprice">240.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Caesar Salad with Country Style Dressing</p>
+                        <p class="p" id="menuprice">240.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Appertizers</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Calamari Fritti</p>
+                        <p class="p" id="menuprice">180.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Homemade Paté with Cognac and Fresh Green Peppercorns</p>
+                        <p class="p" id="menuprice">200.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Tartine Dip</p>
+                        <p class="p" id="menuprice">280.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Oceanic Gang</p>
+                        <p class="p" id="menuprice">450.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Italian Bruchetta (Mushroom topping / Tomato topping)</p>
+                        <p class="p" id="menuprice">160.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Baked Spinach with Cheese and Pork Sausage</p>
+                        <p class="p" id="menuprice">280.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Crispy Ravioli with Salsa</p>
+                        <p class="p" id="menuprice">180.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">French Fries with Aïoli Dip</p>
+                        <p class="p" id="menuprice">110.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Thai Steak with Spicy Thai Hot Sauce (Kurobuta Pork / Ribeye Steak)
+                        </p>
+                        <p class="p" id="menuprice">280.- / 360.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Salmon Sashimi in Spicy Hot Sauce</p>
+                        <p class="p" id="menuprice">240.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Greyhound Famous Fried Chicken Wings</p>
+                        <p class="p" id="menuprice">160.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Street Style Grilled Lamb on Skewer</p>
+                        <p class="p" id="menuprice">380.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Waterfall Mushroom and Tofu</p>
+                        <p class="p" id="menuprice">180.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Pomelo Salad</p>
+                        <p class="p" id="menuprice">240.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Yum Japanese Seaweed with Harusame Glass Noodle</p>
+                        <p class="p" id="menuprice">230.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fresh Vietnamese Spring Rolls</p>
+                        <p class="p" id="menuprice">160.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fried Vietnamese Spring Rolls</p>
+                        <p class="p" id="menuprice">180.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Yum Thai Steak Salad (Beef / Pork)</p>
+                        <p class="p" id="menuprice">210.- / 160.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fried Salmon Toro with Dip</p>
+                        <p class="p" id="menuprice">240.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Som-Tum Salad with Black Crab and Japanese Soybeans</p>
+                        <p class="p" id="menuprice">200.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Hot and Spicy Beef or Pork Balls with Crispy Celery</p>
+                        <p class="p" id="menuprice">160.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Crispy Sweet Corn with Crab Meat</p>
+                        <p class="p" id="menuprice">260.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Mini Pork Ribs</p>
+                        <p class="p" id="menuprice">260.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Sandwich And Burgers</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Ham and Cheese Grill</p>
+                        <p class="p" id="menuprice">240.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Pita Pizza Italian Sausage</p>
+                        <p class="p" id="menuprice">280.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Buffalo Burger</p>
+                        <p class="p" id="menuprice">320.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Super Elvis Burger</p>
+                        <p class="p" id="menuprice">420.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Elvis Burger</p>
+                        <p class="p" id="menuprice">280.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Pasta</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Crab Cannelloni</p>
+                        <p class="p" id="menuprice">340.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Spaghetti Vongole</p>
+                        <p class="p" id="menuprice">260.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Penne with Spicy Pesto Sauce</p>
+                        <p class="p" id="menuprice">280.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fettuccini with Shrimp and Mushroom Cream Sauce</p>
+                        <p class="p" id="menuprice">300.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fettuccini with Grilled Vegetables in Pesto Sauce</p>
+                        <p class="p" id="menuprice">220.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fermented Pork Rigatoni</p>
+                        <p class="p" id="menuprice">240.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fettuccini with Imported Seared Scallops, Asparagus in Light Pesto
+                            Cream Sauce</p>
+                        <p class="p" id="menuprice">450.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Spaghetti Carbonara in Light Cream Sauce</p>
+                        <p class="p" id="menuprice">280.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Spaghetti with Dried Salty Fish</p>
+                        <p class="p" id="menuprice">250.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Spaghetti with Italian Pork Sausage</p>
+                        <p class="p" id="menuprice">260.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Spaghetti with Crab Meat in Prawn Cream Sauce</p>
+                        <p class="p" id="menuprice">300.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Spicy Spaghetti Thai Style (Beef / Chicken / Seafood)</p>
+                        <p class="p" id="menuprice">260.- / 240.- / 280.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Spaghetti with Thai Anchovy</p>
+                        <p class="p" id="menuprice">230.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Spaghetti Olio with Bacon</p>
+                        <p class="p" id="menuprice">280.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Spaghetti with Corned Beef and Fresh Chili</p>
+                        <p class="p" id="menuprice">280.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Noodle</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Complicated Noodle</p>
+                        <p class="p" id="menuprice">220.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Mee-Sua Noodle</p>
+                        <p class="p" id="menuprice">170.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Tokyo Soba</p>
+                        <p class="p" id="menuprice">180.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Noodle in Pork Stew</p>
+                        <p class="p" id="menuprice">160.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Phad Thai with Fresh Shrimp</p>
+                        <p class="p" id="menuprice">240.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Wok-Fried Rice Noodle with Chicken and Dried Squid</p>
+                        <p class="p" id="menuprice">180.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Noodle with Braised Beef (or pork) – Dry</p>
+                        <p class="p" id="menuprice">180.- / 160.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Noodle with Braised Beef (or pork) – Soup</p>
+                        <p class="p" id="menuprice">180.- / 160.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Miss Saigon</p>
+                        <p class="p" id="menuprice">200.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Noodle in Tom Yum Koong</p>
+                        <p class="p" id="menuprice">280.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fried Noodle with Sea Bass</p>
+                        <p class="p" id="menuprice">240.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Beef Salad Noodle</p>
+                        <p class="p" id="menuprice">230.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Pork Salad Noodle</p>
+                        <p class="p" id="menuprice">180.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Europian Main Dish</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Beer-Battered Fish and Chips</p>
+                        <p class="p" id="menuprice">320.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Grilled Salmon Steak on Green Bed</p>
+                        <p class="p" id="menuprice">360.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Simple Grilled Sea Bass</p>
+                        <p class="p" id="menuprice">450.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Thai Main Dish</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fried Rice with Dried Beef</p>
+                        <p class="p" id="menuprice">200.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Kao Nam Prik Pla Tu</p>
+                        <p class="p" id="menuprice">240.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Hainanese Chicken and Rice</p>
+                        <p class="p" id="menuprice">200.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fried Rice with Dried Salty Fish</p>
+                        <p class="p" id="menuprice">220.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Egg and Bacon Fried Rice</p>
+                        <p class="p" id="menuprice">200.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fried Rice with Shrimp Paste</p>
+                        <p class="p" id="menuprice">230.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fried Tons of Crab Meat with Rice</p>
+                        <p class="p" id="menuprice">490.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Chilli Paste Fried Rice with Shrimp</p>
+                        <p class="p" id="menuprice">280.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Spicy Fried Salmon with Holy Basil on Rice</p>
+                        <p class="p" id="menuprice">300.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Vegetarian Dish</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Grilled Pumpkin and Tofu Salad</p>
+                        <p class="p" id="menuprice">240.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fresh Lasagna Salad</p>
+                        <p class="p" id="menuprice">180.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Grilled Vegetable Salad with Pesto Sauce</p>
+                        <p class="p" id="menuprice">180.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Vegetarian Tokyo Soba</p>
+                        <p class="p" id="menuprice">160.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Waterfall Mushroom and Tofu</p>
+                        <p class="p" id="menuprice">180.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Crispy Vegetarian Ravioli</p>
+                        <p class="p" id="menuprice">160.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Baked Spinach with Cheese</p>
+                        <p class="p" id="menuprice">220.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Vegetarian Phad Thai</p>
+                        <p class="p" id="menuprice">150.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Vegetarian Mixed Mushroom Spaghetti</p>
+                        <p class="p" id="menuprice">220.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fettuccini with Grilled Vegetables in Pesto Sauce</p>
+                        <p class="p" id="menuprice">220.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Spicy Spaghetti Vegetarian</p>
+                        <p class="p" id="menuprice">200.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                </div>
+            </section>
+            <section class="section4 container-sm">
+                <div id="drink" style="display: none;">
+                    <h1 class="headerMenu">Cold Beverages</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Iced Lemon Tea</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Iced Tea</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Iced Tea with Milk</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Frosty Lemon Tea</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Iced Latte</p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Iced Americano</p>
+                        <p class="p" id="menuprice">120.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Iced Cappuccino</p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Frosty Cappuccino</p>
+                        <p class="p" id="menuprice">140.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Iced Cocoa</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Frosty Choco</p>
+                        <p class="p" id="menuprice">110.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Espresso Frappe’</p>
+                        <p class="p" id="menuprice">140.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Iced Mocha</p>
+                        <p class="p" id="menuprice">140.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Mocha Frappe’</p>
+                        <p class="p" id="menuprice">140.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Hot Drink</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Hot Milk</p>
+                        <p class="p" id="menuprice">50.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Hot Cocoa</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Hot Lemonade</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Americano</p>
+                        <p class="p" id="menuprice">105.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Decaf Americano</p>
+                        <p class="p" id="menuprice">85.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Café Latte</p>
+                        <p class="p" id="menuprice">95.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Decaf Caffe Latte</p>
+                        <p class="p" id="menuprice">95.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Cappuccino</p>
+                        <p class="p" id="menuprice">120.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Decaf Cappuccino</p>
+                        <p class="p" id="menuprice">95.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Macchiato</p>
+                        <p class="p" id="menuprice">110.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Decaf-Macchiato</p>
+                        <p class="p" id="menuprice">95.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Espresso-single</p>
+                        <p class="p" id="menuprice">95.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Decaf Espresso-Single</p>
+                        <p class="p" id="menuprice">85.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Espresso-Double</p>
+                        <p class="p" id="menuprice">110.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Decaf Espresso-Double</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Tea (Chamomile)</p>
+                        <p class="p" id="menuprice">85.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Tea (Peppermint)</p>
+                        <p class="p" id="menuprice">85.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Tea (Earl Grey)</p>
+                        <p class="p" id="menuprice">85.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Tea (Darjeeling)</p>
+                        <p class="p" id="menuprice">85.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Tea (English Breakfast)</p>
+                        <p class="p" id="menuprice">85.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Japanese Green Tea</p>
+                        <p class="p" id="menuprice">90.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Japanese Green Tea with Roasted Rice</p>
+                        <p class="p" id="menuprice">90.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Fruit Juice</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Lychee Shake</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Banana Shake</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Watermelon Shake</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Strawberry Shake</p>
+                        <p class="p" id="menuprice">120.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fresh Orange Juice / Shake</p>
+                        <p class="p" id="menuprice">120.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Pineapple Juice / Shake</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Apple Juice / Shake</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Lime Juice / Shake / Soda</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Mixed Fruit Punch</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Mixed Fruit Punch Shake</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Coconut Shake</p>
+                        <p class="p" id="menuprice">120.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Float</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Chinese Plum & Sprite Float</p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Bubble Sour</p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Espresso Float</p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Citrus Soda Float</p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Cherry Soda Float</p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Granita</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Thai Tea Granita</p>
+                        <p class="p" id="menuprice">120.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Yok Lor Granita</p>
+                        <p class="p" id="menuprice">120.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Nom Yen Granita</p>
+                        <p class="p" id="menuprice">120.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Healthy Cocotail</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Pick You Up (Grape Fruit, Pineapple, Banana)</p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fruity Shaky Yoghurt</p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Innocent Voyage (Orange, Grape Fruit, Pineapple)</p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Passion Fashion (Passion Fruit, Pineapple, Lime Juice, Mint Syrup)
+                        </p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Pink Cooler (Watermelon, Orange, Pineapple)</p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Pink Journey (Strawberry, Apple Juice, Lime Juice)</p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Green Mellow ( Green Apple, Kiwi, Mint Syrup)</p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                </div>
+            </section>
+            <section class="section5 container-sm">
+                <div id="dessert" style="display: none;">
+                    <h1 class="headerMenu">Toast</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Happy Toast</p>
+                        <p class="p" id="menuprice">120.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Crepe</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Crepe Suzette</p>
+                        <p class="p" id="menuprice">90.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Crepe Suzette with ice cream</p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Crepe Mix Fruit (banana, blueberry, peach) with ice cream</p>
+                        <p class="p" id="menuprice">130.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Cake</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Crepe Mix Fruit (banana, blueberry, peach)</p>
+                        <p class="p" id="menuprice">90.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Fresh Made Apple Crumble with ice-cream</p>
+                        <p class="p" id="menuprice">180.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Sea Salt Caramel Chocolate with Vanilla Cream</p>
+                        <p class="p" id="menuprice">230.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Mixed Berries Crepe Cake</p>
+                        <p class="p" id="menuprice">200.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Chocolate Banana Crepe Cake</p>
+                        <p class="p" id="menuprice">160.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Blueberry Cheesecake</p>
+                        <p class="p" id="menuprice">140.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Walnut Blondie (+ Ice Cream)</p>
+                        <p class="p" id="menuprice">120.- / 160.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Banoffee</p>
+                        <p class="p" id="menuprice">160.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Young Coconut Crepe Cake</p>
+                        <p class="p" id="menuprice">200.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Thai dessert</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Sakoo Piek</p>
+                        <p class="p" id="menuprice">120.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Tub Tim Krob Greyhound Style</p>
+                        <p class="p" id="menuprice">120.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Chow Kuay</p>
+                        <p class="p" id="menuprice">65.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Lod Chong Singapore</p>
+                        <p class="p" id="menuprice">100.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                    <h1 class="headerMenu">Parfait</h1>
+                    <div class="menu">
+                        <p class="p" id="menuname">Chum Cham size S / L</p>
+                        <p class="p" id="menuprice">150.- / 195.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Temple Fair size S / L</p>
+                        <p class="p" id="menuprice">150.- / 195.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Chocolate Lover size S / L</p>
+                        <p class="p" id="menuprice">150.- / 195.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Mixed Berries size S / L</p>
+                        <p class="p" id="menuprice">150.- / 195.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Banana Choc size S / L</p>
+                        <p class="p" id="menuprice">150.- / 195.-</p>
+                    </div>
+                    <div class="menu">
+                        <p class="p" id="menuname">Sticky Rice Mango size S</p>
+                        <p class="p" id="menuprice">160.-</p>
+                    </div>
+                    <div class="menu">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline">
+                    </div>
+                </div>
+            </section>
+            <section class="section6 container-sm">
+                <div id="branch" style="display: none;">
+                    <button class="headerCountry" onclick=branchLoc1()
+                        style="width: 20%;margin-left: 40%;margin-right: 30%;">Thailand</button>
+                    <div class="map-responsive" id="loc1" style="display: none;">
+                        <iframe src="./branch/HtmlTH.html" width="50" height="50" frameborder="0"
+                            style="border:0; border-radius: 25px;"></iframe>
+                    </div>
+                    <div class="branch">
+                        Central Bangna
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        ICONSIAM
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Nang Linchee
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        The Promenade
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Centralplaza Pinklao
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Mega Bangna
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Central Lardprao
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Emquartier
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Central Chidlom
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        J Avenue
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Phaholyothin (Ari)
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Siam Center
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        The Crystal
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        The Circle
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Groove @ Centralworld
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+
+
+                    <button class="headerCountry" onclick=branchLoc2()
+                        style="width: 20%;margin-left: 40%;margin-right: 30%;">Hongkong</button>
+                    <div class="map-responsive" id="loc2" style="display: none;">
+                        <iframe src="./branch/HtmlHK.html" width="600" height="450" frameborder="0"
+                            style="border:0; border-radius: 25px;"></iframe>
+                    </div>
+                    <div class="branch">
+                        Elements
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Popcorn City
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Whampoa
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        IFC Mall
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Ocean Terminal
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Festival Walk
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Grand Century Place
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Shatin
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+
+                    <button class="headerCountry" onclick=branchLoc3()
+                        style="width: 20%;margin-left: 40%;margin-right: 30%;">China</button>
+                    <div class="map-responsive" id="loc3" style="display: none;">
+                        <iframe src="./branch/HtmlCN.html" width="600" height="450" frameborder="0"
+                            style="border:0; border-radius: 25px;"></iframe>
+                    </div>
+                    <div class="branch">
+                        Kerry Centre
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+
+                    <button class="headerCountry" onclick=branchLoc4()
+                        style="width: 20%;margin-left: 40%;margin-right: 30%;">Singapore</button>
+                    <div class="map-responsive" id="loc4" style="display: none;">
+                        <iframe src="./branch/HtmlSP.html" width="600" height="450" frameborder="0"
+                            style="border:0"></iframe>
+                    </div>
+                    <div class="branch">
+                        Paragon
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+
+                    <button class="headerCountry" onclick=branchLoc5()
+                        style="width: 20%;margin-left: 40%;margin-right: 30%;">Indonesia</button>
+                    <div class="map-responsive" id="loc5" style="display: none;">
+                        <iframe src="./branch/HtmlIndo.html" width="600" height="450" frameborder="0"
+                            style="border:0; border-radius: 25px;"></iframe>
+                    </div>
+                    <div class="branch">
+                        Gunawarman
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                    <div class="branch">
+                        Grand Indonesia
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+
+                    <button class="headerCountry" onclick=branchLoc6()
+                        style="width: 50%;margin-left: 25%;margin-right: 30%;">United Kingdom</button>
+                    <div class="map-responsive" id="loc6" style="display: none;">
+                        <iframe src="./branch/HtmlUK.html" width="600" height="450" frameborder="0"
+                            style="border:0; border-radius: 25px;"></iframe>
+                    </div>
+                    <div class="branch">
+                        London
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+
+                    <button class="headerCountry" onclick=branchLoc7()
+                        style="width: 20%;margin-left: 40%;margin-right: 30%;">Vietnam</button>
+                    <div class="map-responsive" id="loc7" style="display: none;">
+                        <iframe src="./branch/HtmlViet.html" width="600" height="450" frameborder="0"
+                            style="border:0; border-radius: 25px;"></iframe>
+                    </div>
+                    <div class="branch" >
+                        Ho Chi Minh
+                        <br><br><br><br>
+                    </div>
+                    <div class="branch">
+                        <img src="./images/decoration_line1.png" class="img-fluid" alt="image3" id="imgline2">
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    
+</body>
+<footer >
+    <p style="text-align:center;">
+        LIFE IS A JOURNEY, FULL OF PICTURES, PLACES, STORIES AND GOOD TASTING RECIPES.
+    </p>
+</footer>
+</html>

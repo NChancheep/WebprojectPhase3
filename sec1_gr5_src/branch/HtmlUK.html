@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Greyhound in United Kingdom</title>
+    <style>
+        html {
+        height: 100%;
+        }
+        body {
+        margin: 0px;
+        height: 100%;
+        }
+        #map {
+        height: 100%;
+        }
+    </style>
+    <script src="https://api.longdo.com/map/?key=3f1a65bb2814d56b1435da392221ff20">
+    </script>
+    <script>
+        function init() {
+            var map = new longdo.Map({
+                placeholder: document.getElementById('map'),
+                zoom: 9,
+                lastView:false,
+                
+                language: 'en'
+            });
+            //london
+            let marker1 = new longdo.Marker({lon: -0.13773631693159313, lat:51.518672287447174}); 
+           
+
+            //show maker
+            map.location({lon: -0.13773631693159313, lat:51.518672287447174}, true); 
+            map.Overlays.add(marker1);
+         
+        }
+  
+    </script>
+  </head>
+  <body onload="init();">
+      <div id="map">
+      
+      </div>
+  </body>
+</html>

@@ -1,0 +1,211 @@
+* {
+    font-family: 'Archivo', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    padding: 12px;
+    float: right;
+    margin-right: 2%;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    padding: 14px 16px;
+
+}
+
+.rightnav {
+    float: right;
+    margin-right: 2%;
+}
+
+.rightnav a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    padding: 14px 16px;
+
+}
+
+.hamburger {
+    margin: 0;
+    padding: 19px 16px;
+    display: inline-block;
+    position: absolute;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    display: block;
+    background-color: white;
+    margin-bottom: 5px;
+}
+
+.hamburger span:last-child {
+    margin-bottom: 0px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.5s;
+}
+
+.sidenav a:hover {
+    color: grey;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer
+    height: 40px;
+    background: rgba(196, 196, 196, 0.596);
+    */
+}
+
+.logo {
+    padding: 0px;
+    float: left;
+    width: 234px;
+    margin-top: -50px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: -120px;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+}
+
+.main_a {
+    padding-top: 150px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    display: block;
+}
+
+.left,
+.right {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+}
+
+.left {
+    left: 0;
+    background-color: rgb(255, 255, 255);
+
+}
+
+.right {
+    right: 0;
+    background-color: rgb(148, 148, 148);
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.centered img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.gif {
+    display: block;
+    width: 100%;
+}
+
+.reservation {
+    padding-left: 5%;
+    color: black;
+    padding-top: 5%;
+}
+
+.reser {
+    font-size: 8vw;
+}
+
+.Renow {
+    color: black;
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width: 375px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 20px;
+    }
+
+    .footer p {
+        font-size: 50px;
+    }
+
+    #section1 {
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .rightnav1 {
+        display: none;
+        color: white;
+    }
+
+    body {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .rightnav2 {
+        display: none;
+
+    }
+}

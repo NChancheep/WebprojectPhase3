@@ -1,0 +1,207 @@
+.Allnav{
+    background: url("./images/Homepage_background.jpg");
+}
+nav {
+    padding: 12px;
+    float: right;
+    margin-right: 2%;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    padding: 14px 16px;
+
+}
+
+.hamburger {
+    margin: 0;
+    padding: 19px 16px;
+    display: inline-block;
+    position: absolute;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    display: block;
+    background-color: white;
+    margin-bottom: 5px;
+}
+
+.hamburger span:last-child {
+    margin-bottom: 0px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.5s;
+}
+
+.sidenav a:hover {
+    color: grey;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 50px;
+    margin-left: 50px;
+}
+
+.topic {
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 1024px) {
+    .rightnav1 {
+        display: none;
+    }
+
+    body {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    body {
+        background-size: auto;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .rightnav2 {
+        display: none;
+    }
+    
+    #section2{
+        padding-left: 30em;
+        
+    }
+}
+@media screen and (max-width: 1025px) {
+    #section2{
+        margin-top: 10em;
+        
+    }
+}
+.small-box {
+    border-radius: 0.25rem;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+}
+  
+.small-box > .inner {
+    padding: 10px;
+}
+  
+.small-box > .small-box-footer {
+    background: rgba(0, 0, 0, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    display: block;
+    padding: 3px 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    
+}
+  
+.small-box > .small-box-footer:hover {
+    background: rgba(0, 0, 0, 0.15);
+    color: #ffffff;
+}
+  
+.small-box h3 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    padding: 0;
+    white-space: nowrap;
+
+}
+.AllBox{
+    margin-top: 2%;
+}
+
+.Graph{
+    margin-top: 5%;
+}
+
+.button {
+    background-color: #535353;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 200px;
+    margin-bottom: 20px;
+}
+
+.button1 {
+    background-color: rgb(53, 53, 53); 
+    color: rgb(255, 255, 255); 
+    border: 2px solid #000000;
+}
+
+.button1:hover {
+    background-color: #ffffff;
+    color: rgb(53, 53, 53);
+}
+
+#deco1 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.shift {
+    margin-bottom: 20px;
+}
+
+.adjust {
+    margin-left: 50px;
+}
+
+.adjust_sub {
+    margin-bottom: 20px;
+}
+
+.line {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-top: 1px solid black;
+}
+
+.input_deco {
+    border: 3px solid rgb(184, 183, 183);
+    border-radius: 4px;
+}

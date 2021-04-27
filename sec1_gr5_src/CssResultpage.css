@@ -1,0 +1,191 @@
+* {
+    font-family: 'Archivo', sans-serif;
+    
+}
+
+/* body{
+    background-image: url("../picture/g_cafe.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+} */
+
+nav {
+    padding: 10px 5px 5px 5px;
+    float: right;
+    margin-right: 2%;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    padding-right: 5px;
+
+}
+
+.hamburger {
+    margin: 0;
+    padding: 19px 16px;
+    display: inline-block;
+    position: absolute;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    display: block;
+    background-color: black;
+    margin-bottom: 5px;
+}
+
+.hamburger span:last-child {
+    margin-bottom: 0px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.5s;
+}
+
+.sidenav a:hover {
+    color: grey;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 50px;
+    margin-left: 50px;
+}
+.home1{
+    padding-right: 35px;
+}
+.mem1{
+    padding-right: 0px;
+}
+.home2{
+    padding-right: 35px;
+}
+.mem2{
+    padding-right: 0px;
+}
+.img-fluid {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+
+#imgline{
+    width: 100%;
+    padding-top: 5%;
+}
+
+.navlist {
+    margin: 3%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 20px;
+}
+
+
+.navlist a{
+    color:black;
+    padding-top:5px;
+    padding-bottom: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.headerMenu{
+    font-family: 'Yellowtail', cursive;
+    
+    font-size: 45px;
+}
+.paraMenu{
+    font-size: 18px;
+}
+.section1{
+    color:black;
+    background: #c4c4c4e8;
+    box-shadow:rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+}
+
+label{
+    padding-top: 3%;
+}
+
+.card-img{
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/
+    height: 40px;
+    background: rgba(196, 196, 196, 0.596);
+    color: black;
+}
+
+@media screen and (max-width: 375px) {
+    .card-mb-3{
+        max-width: 320px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+  
+    .rightnav1{
+        display: none;
+    }
+    body { 
+        font-size: 2em; 
+     }
+}
+
+@media screen and (min-width: 1025px) {
+    
+    .rightnav2{
+        display: none;
+    }
+
+    .col-md-4{
+        margin-bottom: 20px;
+    }
+
+    .card-text{
+        font-size: 16px;
+    }
+}

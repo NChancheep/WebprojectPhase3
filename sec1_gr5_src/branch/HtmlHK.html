@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Greyhound in Hongkong</title>
+    <style>
+        html {
+        height: 100%;
+        }
+        body {
+        margin: 0px;
+        height: 100%;
+        }
+        #map {
+        height: 100%;
+        }
+    </style>
+    <script src="https://api.longdo.com/map/?key=3f1a65bb2814d56b1435da392221ff20">
+    </script>
+    <script>
+        function init() {
+            var map = new longdo.Map({
+                placeholder: document.getElementById('map'),
+                zoom: 9,
+                lastView:false,
+                
+                language: 'en'
+            });
+            //Elements
+            let marker1 = new longdo.Marker({ lon: 114.1613045312914, lat: 22.3048160612793});
+            //Popcorn City
+            //let marker2 = new longdo.Marker({ lon: 100.50981128218203, lat: 13.726830605638545});
+            //Whampoa
+            let marker3 = new longdo.Marker({ lon: 114.19006533918044, lat: 22.30579240767256});
+            //IFC Mall
+            let marker4 = new longdo.Marker({ lon: 114.15814804638235, lat: 22.286020688904355}); 
+            //Ocean Terminal
+            let marker5 = new longdo.Marker({ lon: 114.16691920435032, lat: 22.29516607088409});
+            //Festival Walk
+            let marker6 = new longdo.Marker({ lon: 114.17570751532566, lat: 22.337461169508078});
+            //Grand Century Place
+            let marker7 = new longdo.Marker({ lon: 114.17191416325161, lat: 22.322957888232867});
+            //Shatin
+            let marker8 = new longdo.Marker({ lon: 114.19759874388309, lat: 22.37794355895441}); 
+
+            //show maker
+            map.location({ lon:114.1805620170481, lat:22.32154193147503}, true);
+            map.Overlays.add(marker1);
+            //map.Overlays.add(marker2);
+            map.Overlays.add(marker3);
+            map.Overlays.add(marker4);
+            map.Overlays.add(marker5);
+            map.Overlays.add(marker6);
+            map.Overlays.add(marker7);
+            map.Overlays.add(marker8);
+          
+        }
+  
+    </script>
+  </head>
+  <body onload="init();">
+      <div id="map">
+      
+      </div>
+  </body>
+</html>
