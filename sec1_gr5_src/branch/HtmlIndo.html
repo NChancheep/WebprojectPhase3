@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Greyhound in Indonesia</title>
+    <style>
+        html {
+        height: 100%;
+        }
+        body {
+        margin: 0px;
+        height: 100%;
+        }
+        #map {
+        height: 100%;
+        }
+    </style>
+    <script src="https://api.longdo.com/map/?key=3f1a65bb2814d56b1435da392221ff20">
+    </script>
+    <script>
+        function init() {
+            var map = new longdo.Map({
+                placeholder: document.getElementById('map'),
+                zoom: 9,
+                lastView:false,
+                
+                language: 'en'
+            });
+            //Gunawarman
+            let marker1 = new longdo.Marker({lon:106.80708598212466, lat:-6.2376237463296205}); 
+            //grand indo
+            let marker2 = new longdo.Marker({lon:106.8204608636993, lat:-6.1947816134028395});
+
+            //show maker
+            map.location({lon:106.80708598212466, lat:-6.2376237463296205}, true); 
+            map.Overlays.add(marker1);
+            map.Overlays.add(marker2);
+        }
+  
+    </script>
+  </head>
+  <body onload="init();">
+      <div id="map">
+      
+      </div>
+  </body>
+</html>

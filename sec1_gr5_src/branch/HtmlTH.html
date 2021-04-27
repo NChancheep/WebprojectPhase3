@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Greyhound in Thailand</title>
+    <style>
+        html {
+        height: 100%;
+        }
+        body {
+        margin: 0px;
+        height: 100%;
+        }
+        #map {
+        height: 100%;
+        }
+    </style>
+    <script src="https://api.longdo.com/map/?key=3f1a65bb2814d56b1435da392221ff20">
+    </script>
+    <script>
+        function init() {
+            var map = new longdo.Map({
+                placeholder: document.getElementById('map'),
+                zoom: 9,
+                lastView:false,
+                
+                language: 'en'
+            });
+            //central bangna
+            let marker1 = new longdo.Marker({ lon: 100.63473579618578, lat: 13.66967731363396});
+            //icon siam
+            let marker2 = new longdo.Marker({ lon: 100.50981128218203, lat: 13.726830605638545});
+            //Nang Linchee
+            let marker3 = new longdo.Marker({ lon: 100.54326423434874, lat: 13.711195497228715});
+            //the promenade
+            let marker4 = new longdo.Marker({ lon: 100.67781828752989, lat: 13.826882303551953});
+            //central pinklao
+            let marker5 = new longdo.Marker({ lon: 100.47601867054267, lat: 13.778087512869138});
+            //mega bangna
+            let marker6 = new longdo.Marker({ lon: 100.6802873551973, lat: 13.646914383327527});
+            //central ladprao
+            let marker7 = new longdo.Marker({ lon: 100.56103625874114, lat: 13.816451887078271});
+            //Emquartier
+            let marker8 = new longdo.Marker({ lon: 100.56931349937823, lat: 13.731367267752715});
+            //Central Chidlom
+            let marker9 = new longdo.Marker({ lon: 100.54433358033236, lat: 13.744199130530689});
+            //J Avenue
+            let marker10 = new longdo.Marker({ lon: 100.58214858293216, lat: 13.73464184402539});
+            //Phaholyothin (Ari)
+            let marker11 = new longdo.Marker({ lon: 100.54492165334668, lat: 13.780147270867312});
+            //Siam Center
+            let marker12 = new longdo.Marker({ lon: 100.53270460142696, lat: 13.746379539898323});
+            //The Crystal
+            let marker13 = new longdo.Marker({ lon: 100.61947521287102, lat: 13.811536506949793});
+            //The Circle
+            let marker14 = new longdo.Marker({ lon: 100.44301075731443, lat: 13.768032636902158});
+            //Groove @ Centralworld
+            let marker15 = new longdo.Marker({ lon: 100.53822349752636, lat: 13.74553488649837});
+            
+
+            //show maker
+            map.location({ lon:100.50716731483513, lat:13.749059627150924}, true);
+            map.Overlays.add(marker1);
+            map.Overlays.add(marker2);
+            map.Overlays.add(marker3);
+            map.Overlays.add(marker4);
+            map.Overlays.add(marker5);
+            map.Overlays.add(marker6);
+            map.Overlays.add(marker7);
+            map.Overlays.add(marker8);
+            map.Overlays.add(marker9);
+            map.Overlays.add(marker10);
+            map.Overlays.add(marker11);
+            map.Overlays.add(marker12);
+            map.Overlays.add(marker13);
+            map.Overlays.add(marker14);
+            map.Overlays.add(marker15);
+        }
+  
+    </script>
+  </head>
+  <body onload="init();">
+      <div id="map">
+      
+      </div>
+  </body>
+</html>

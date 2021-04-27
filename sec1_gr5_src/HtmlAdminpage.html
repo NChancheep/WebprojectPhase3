@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="CssAdminpage.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>
+        Admin
+    </title>
+    <script>
+        function openNav() {
+            document.getElementById("sidenav").style.width = "200px";
+        }
+
+        function closeNav() {
+            document.getElementById("sidenav").style.width = "0";
+        }
+    </script>
+    <script src = "JsAdminpage.js"></script>
+    <script src="JsChecklogin.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #section1 {
+            height: 250px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #section2 {
+            height: 300px;
+            background-color: rgb(255, 255, 255);
+            margin-top: 4%;
+        }
+
+        #section3 {
+            background-color: rgb(0, 0, 0);
+            width: fit-content;
+        }
+
+        #section4 {
+            height: 500px;
+            background: url("./images/background1.jpg");
+            background-repeat: no-repeat;
+            /* background-size: 100%; */
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        #section5 {
+            height: 600px;
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+
+<body onload="myFunction() , alwayscheck()">
+    <main class="container-sd">
+        <header class="row">
+            <div class="Allnav">
+                <div class="col">
+                    <span style="font-size:20px;cursor:pointer" onclick="openNav()">
+                        <label class="hamburger">
+                            <span>&nbsp;</span>
+                            <span>&nbsp;</span>
+                            <span>&nbsp;</span>
+                        </label>
+                    </span>
+                    <div id="sidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="HtmlOurstorypage.html">OUR STORY</a>
+                        <a href="HtmlAboutuspage.html">ABOUT US</a>
+                        <a href="HtmlCategoriespage.html">CATAGORIES</a>
+                        <div id="showSearch"></div>
+                        <div id="showLogin"></div>
+                        <div id="showLogout"></div>
+                    </div>
+                </div>
+                <nav class="col text-right">
+                    <ul class="rightnav1">
+                        <a href="HtmlMainpage.html"><i class=""></i><b>HOME</b></a>
+                        <span id="memberIn1"></span>
+                        <span id="memberOut1"></span>
+                    </ul>
+                    <ul class="rightnav2">
+                        <a href="HtmlMainpage.html"><i class="glyphicon glyphicon-home"></i></a>
+                        <span id="memberIn2"></span>
+                        <span id="memberOut2"></span>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="content" id="section1">
+            <div class="container-fluid">
+                <!-- Small boxes (Stat box) -->
+                <div class="AllBox row">
+                    <h1 style="margin-bottom: 2%; margin-left: 1%; font-weight: bold;">DASHBORD</h1>
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3>150 Orders</h3>
+                                <p>New Orders</p>
+                            </div>
+                            <a href="#" class="small-box-footer">More info </a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-white">
+                            <div class="inner">
+                                <h3>823 users</h3>
+                                <p>All Users</p>
+                            </div>
+                            <a href="#" class="small-box-footer">More info</a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-warning">
+                            <div class="inner">
+                                <h3>44 News</h3>
+                                <p>User Registrations</p>
+                            </div>
+                            <a href="#" class="small-box-footer">More info</a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3>65 Users</h3>
+                                <p>Unique Visitors</p>
+                            </div>
+                            <a href="#" class="small-box-footer">More info</a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                </div>
+            </div>
+        </section>
+    </main>
+        
+    <h1 class="topic" style="text-align: center; font-size: 3em ; font-weight: bold;">Adjust the information</h1><br>
+
+    <!--USERS-->
+    <hr class="line">
+    <h2 class="adjust" style="text-align: center; font-size: 2em ; font-weight: bold;">User Section</h2>
+    <hr class="line">
+
+    <div class="adjust">
+        <div class="adjust_sub">
+            <h3 style="font-size: 1.75em ; font-weight: bold;">Search All Users in database.</h3>
+            <button class="w3-button w3-black w3-round-large" style="margin-bottom: 10px;" id="button1" onclick="searchAllUser()">Click</button>
+            <div id="allUser"></div>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Input the User ID to find more information.</h4>
+            <input class="input_deco" type="text" id="searchUserID" required>
+            <button class="w3-button w3-black w3-round-large" style="margin-bottom: 10px;" id="button2" onclick="selectByUserId(document.getElementById('searchUserID').value)">Find</button>
+            <p id="byUserId"></p>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Fill in the information to insert a new user into database.</h4>
+            <label for="us">Username:</label>
+            <input class="input_deco" type="text" id="us" name="us" required><br>
+            <label for="pw">Password:</label>
+            <input class="input_deco" type="text" id="pw" name="pw" required><br>
+            <label for="fname">Firstname:</label>
+            <input class="input_deco" type="text" id="fname" name="fname" required><br>
+            <label for="lname">Lastname:</label>
+            <input class="input_deco" type="text" id="lname" name="lname" required><br>
+            <label for="adrs">Address:</label>
+            <input class="input_deco" type="text" id="adrs" name="adrs" required><br>
+            <label for="yo">Age:</label>
+            <input class="input_deco" type="number" id="yo" name="yo" required><br>
+            <label for="pref">Preferences:</label>
+            <input class="input_deco" type="text" id="pref" name="pref" required><br>
+            <label for="mail">Email:</label>
+            <input class="input_deco" type="text" id="mail" name="mail" required><br>
+            <button class="w3-button w3-black w3-round-large" id="button3" onclick="insertUser(document.getElementById('us').value,document.getElementById('pw').value,document.getElementById('fname').value,document.getElementById('lname').value,document.getElementById('adrs').value,document.getElementById('yo').value,document.getElementById('pref').value,document.getElementById('mail').value)">Insert</button>
+            <p id="insertUserResult"></p>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Input the User ID, then fill the information that you want to update.</h4>
+            <label for="id">User ID:</label>
+            <input class="input_deco" type="text" id="id" name="id" required><br><br>
+            <label for="user">Username:</label>
+            <input class="input_deco" type="text" id="user" name="user" required><br>
+            <label for="pass">Password:</label>
+            <input class="input_deco" type="text" id="pass" name="pass" required><br>
+            <label for="firstname">Firstname:</label>
+            <input class="input_deco" type="text" id="firstname" name="firstname" required><br>
+            <label for="lastname">Lastname:</label>
+            <input class="input_deco" type="text" id="lastname" name="lastname" required><br>
+            <label for="adrss">Address:</label>
+            <input class="input_deco" type="text" id="adrss" name="adrss" required><br>
+            <label for="yso">Age:</label>
+            <input class="input_deco" type="number" id="yso" name="yso" required><br>
+            <label for="prefer">Preferences:</label>
+            <input class="input_deco" type="text" id="prefer" name="prefer" required><br>
+            <label for="maill">Email:</label>
+            <input class="input_deco" type="text" id="maill" name="maill" required><br>
+            <button class="w3-button w3-black w3-round-large" id="button4" onclick="updateUser(document.getElementById('id').value,document.getElementById('user').value,document.getElementById('pass').value,document.getElementById('firstname').value,document.getElementById('lastname').value,document.getElementById('adrss').value,document.getElementById('yso').value,document.getElementById('prefer').value,document.getElementById('maill').value)">Update</button>
+            <p id="updateUserResult"></p>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Input the User ID that you want to delete</h4>
+            <input class="input_deco" type="text" id="deleteUserID" required>
+            <button class="w3-button w3-black w3-round-large" id="button5" onclick="deleteUser(document.getElementById('deleteUserID').value)">Delete</button>
+            <p id="deleteUserResult"></p>
+        </div>
+
+    </div>
+
+    <!--FOODS-->
+    <hr class="line">
+    <h2 class="adjust" style="text-align: center; font-size: 2em ; font-weight: bold;">Food Section</h2>
+    <hr class="line">
+
+    <div class="adjust">
+        <div class="adjust_sub">
+            <h3 style="font-size: 1.75em ; font-weight: bold;">Search All Foods in database.</h3>
+            <button class="w3-button w3-black w3-round-large" id="button6" onclick="searchAllFood()">Click</button>
+            <div id="allFood"></div>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Input Food Name to find more information.</h4>
+            <input class="input_deco" type="text" id="searchFoodName" required>
+            <button class="w3-button w3-black w3-round-large" id="button7" onclick="selectByFoodName(document.getElementById('searchFoodName').value)">Find</button>
+            <p id="byFoodName"></p>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Input Food Price to find more information.</h4>
+            <input class="input_deco" type="text" id="searchFoodPrice" required>
+            <button class="w3-button w3-black w3-round-large" id="button21" onclick="selectByFoodPrice(document.getElementById('searchFoodPrice').value)">Find</button>
+            <p id="byFoodPrice"></p>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Fill in the information to insert a new food into database.</h4>
+            <label for="foodN">Food Name:</label>
+            <input class="input_deco" type="text" id="foodN" name="foodN" required><br>
+            <label for="foodP">Food Price:</label>
+            <input class="input_deco" type="text" id="foodP" name="foodP" required><br>
+            <button class="w3-button w3-black w3-round-large" id="button8" onclick="insertFood(document.getElementById('foodN').value,document.getElementById('foodP').value)">Insert</button>
+            <p id="insertFoodResult"></p>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Input the Food Name, then fill the food price to update the information.</h4>
+            <label for="foodName">Food Name:</label>
+            <input class="input_deco" type="text" id="foodName" name="foodName" required><br><br>
+            <label for="foodPrice">Food Price:</label>
+            <input class="input_deco" type="text" id="foodPrice" name="foodPrice" required><br>
+            <button class="w3-button w3-black w3-round-large" id="button9" onclick="updateFood(document.getElementById('foodName').value,document.getElementById('foodPrice').value)">Update</button>
+            <p id="updateFoodResult"></p>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Input the Food Name that you want to delete</h4>
+            <input class="input_deco" type="text" id="deleteFoodName" required>
+            <button class="w3-button w3-black w3-round-large" id="button10" onclick="deleteFood(document.getElementById('deleteFoodName').value)">Delete</button>
+            <p id="deleteFoodResult"></p>
+        </div>
+
+    </div>
+
+    <!--DRINKS-->
+    <hr class="line">
+    <h2 class="adjust" style="text-align: center; font-size: 2em ; font-weight: bold;">Drink Section</h2>
+    <hr class="line">
+
+    <div class="adjust">
+        <div class="adjust_sub">
+            <h3 style="font-size: 1.75em ; font-weight: bold;">Search All Drinks in database.</h3>
+            <button class="w3-button w3-black w3-round-large" id="button11" onclick="searchAllDrink()">Click</button>
+            <div id="allDrink"></div>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Input Drink Name to find more information.</h4>
+            <input class="input_deco" type="text" id="searchDrinkName" required>
+            <button class="w3-button w3-black w3-round-large" id="button12" onclick="selectByDrinkName(document.getElementById('searchDrinkName').value)">Find</button>
+            <p id="byDrinkName"></p>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Input Drink Price to find more information.</h4>
+            <input class="input_deco" type="text" id="searchDrinkPrice" required>
+            <button class="w3-button w3-black w3-round-large" id="button22" onclick="selectByDrinkPrice(document.getElementById('searchDrinkPrice').value)">Find</button>
+            <p id="byDrinkPrice"></p>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Fill in the information to insert a new drink into database.</h4>
+            <label for="drinkN">Drink Name:</label>
+            <input class="input_deco" type="text" id="drinkN" name="drinkN" required><br>
+            <label for="drinkP">Drink Price:</label>
+            <input class="input_deco" type="text" id="drinkP" name="drinkP" required><br>
+            <button class="w3-button w3-black w3-round-large" id="button13" onclick="insertDrink(document.getElementById('drinkN').value,document.getElementById('drinkP').value)">Insert</button>
+            <p id="insertDrinkResult"></p>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Input the Drink Name, then fill the drink price to update the information.</h4>
+            <label for="drinkName">Drink Name:</label>
+            <input class="input_deco" type="text" id="drinkName" name="drinkName" required><br><br>
+            <label for="drinkPrice">Drink Price:</label>
+            <input class="input_deco" type="text" id="drinkPrice" name="drinkPrice" required><br>
+            <button class="w3-button w3-black w3-round-large" id="button14" onclick="updateDrink(document.getElementById('drinkName').value,document.getElementById('drinkPrice').value)">Update</button>
+            <p id="updateDrinkResult"></p>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Input the Drink Name that you want to delete</h4>
+            <input class="input_deco" type="text" id="deleteDrinkName" required>
+            <button class="w3-button w3-black w3-round-large" id="button15" onclick="deleteDrink(document.getElementById('deleteDrinkName').value)">Delete</button>
+            <p id="deleteDrinkResult"></p>
+        </div>
+
+    </div>
+
+    <!--DESSERTS-->
+    <hr class="line">
+    <h2 class="adjust" style="text-align: center; font-size: 2em ; font-weight: bold;">Dessert Section</h2>
+    <hr class="line">
+
+    <div class="adjust">
+        <div class="adjust_sub">
+            <h3 style="font-size: 1.75em ; font-weight: bold;">Search All Desserts in database.</h3>
+            <button class="w3-button w3-black w3-round-large" id="button16" onclick="searchAllDessert()">Click</button>
+            <div id="allDessert"></div>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Input Dessert Name to find more information.</h4>
+            <input class="input_deco" type="text" id="searchDessertName" required>
+            <button class="w3-button w3-black w3-round-large" id="button17" onclick="selectByDessertName(document.getElementById('searchDessertName').value)">Find</button>
+            <p id="byDessertName"></p>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Input Dessert Price to find more information.</h4>
+            <input class="input_deco" type="text" id="searchDessertPrice" required>
+            <button class="w3-button w3-black w3-round-large" id="button23" onclick="selectByDessertPrice(document.getElementById('searchDessertPrice').value)">Find</button>
+            <p id="byDessertPrice"></p>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Fill in the information to insert a new dessert into database.</h4>
+            <label for="dessertN">Dessert Name:</label>
+            <input class="input_deco" type="text" id="dessertN" name="dessertN" required><br>
+            <label for="dessertP">Dessert Price:</label>
+            <input class="input_deco" type="text" id="dessertP" name="dessertP" required><br>
+            <button class="w3-button w3-black w3-round-large" id="button18" onclick="insertDessert(document.getElementById('dessertN').value,document.getElementById('dessertP').value)">Insert</button>
+            <p id="insertDessertResult"></p>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Input the Dessert Name, then fill the dessert price to update the information.</h4>
+            <label for="dessertName">Dessert Name:</label>
+            <input class="input_deco" type="text" id="dessertName" name="dessertName" required><br><br>
+            <label for="dessertPrice">Dessert Price:</label>
+            <input class="input_deco" type="text" id="dessertPrice" name="dessertPrice" required><br>
+            <button class="w3-button w3-black w3-round-large" id="button19" onclick="updateDessert(document.getElementById('dessertName').value,document.getElementById('dessertPrice').value)">Update</button>
+            <p id="updateDessertResult"></p>
+        </div>
+
+        <div class="adjust_sub">
+            <h4 style="font-size: 1.75em ; font-weight: bold;">Input the Dessert Name that you want to delete</h4>
+            <input class="input_deco" type="text" id="deleteDessertName" required>
+            <button class="w3-button w3-black w3-round-large" id="button20" onclick="deleteDessert(document.getElementById('deleteDessertName').value)">Delete</button>
+            <p id="deleteDessertResult"></p>
+        </div>
+
+    </div>
+
+    <hr class="line">
+
+    <br>
+</body>
+
+</html>

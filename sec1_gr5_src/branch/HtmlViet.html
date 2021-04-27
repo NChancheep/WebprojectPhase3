@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Greyhound in Vietnam</title>
+    <style>
+        html {
+        height: 100%;
+        }
+        body {
+        margin: 0px;
+        height: 100%;
+        }
+        #map {
+        height: 100%;
+        }
+    </style>
+    <script src="https://api.longdo.com/map/?key=3f1a65bb2814d56b1435da392221ff20">
+    </script>
+    <script>
+        function init() {
+            var map = new longdo.Map({
+                placeholder: document.getElementById('map'),
+                zoom: 9,
+                lastView:false,
+                
+                language: 'en'
+            });
+            //ho chi min
+            let marker1 = new longdo.Marker({lon: 106.7008612416783, lat:10.77230676841542});
+           
+
+            //show maker
+            map.location({lon: 106.7008612416783, lat:10.77230676841542}, true); 
+            map.Overlays.add(marker1);
+         
+        }
+  
+    </script>
+  </head>
+  <body onload="init();">
+      <div id="map">
+      
+      </div>
+  </body>
+</html>
