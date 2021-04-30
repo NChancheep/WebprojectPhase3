@@ -12,12 +12,7 @@ class loginforAdmin extends React.Component
         super(props);
         this.state = {
           username: "",
-          password: "",
-          firstname: "",
-          lastname: "",
-          age: "",
-          email: "",
-          address: "",
+          password: ""
         };
     
         this.handleChange = this.handleChange.bind(this);
@@ -62,6 +57,7 @@ class loginforAdmin extends React.Component
             localStorage.setItem("admin", true);
             alert("Welcome back "+res.data.firstname+" "+res.data.lastname);
             // location.replace("HtmlAdminpage.html");
+            window.location.assign("http://localhost:3000/");
         }
     }
     render()
