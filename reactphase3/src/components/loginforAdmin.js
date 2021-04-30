@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 
 const H1Style = styled.h1`
@@ -61,7 +62,8 @@ class loginforAdmin extends React.Component
             localStorage.setItem("login", true);
             localStorage.setItem("admin", true);
             alert("Welcome back "+res.data.firstname+" "+res.data.lastname);
-            // location.replace("HtmlAdminpage.html");
+            //location.replace("https://www.youtube.com/");
+            window.location.assign("http://localhost:3002/");
         }
     }
     render()
@@ -85,7 +87,6 @@ class loginforAdmin extends React.Component
                     
                     <input type = "submit" value = "Submit" onClick = {this.adminLogin}/>
                 </div>
-                
             </div>
         );
     }
