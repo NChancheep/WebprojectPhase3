@@ -10,6 +10,7 @@ import FoodSection from "./components/food";
 import DrinkSection from "./components/drink";
 import DessertSection from "./components/dessert";
 
+import loginforAdmin from "./components/loginforAdmin";
 
 class App extends Component
 {
@@ -27,6 +28,7 @@ class App extends Component
             <Route path = "/dessert" component = {DessertSection}/>
             <Route path = "/recipe" component = {Recipe}/>
             <Route path = "/menu" component = {Menu}/>
+            <Route path = "/loginforAdmin" component = {loginforAdmin}/>
           </Switch>
         </div>
       </BrowserRouter>

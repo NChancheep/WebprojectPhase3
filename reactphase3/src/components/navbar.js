@@ -36,6 +36,7 @@ class NavigationBar extends Component
                     <ListStyle><NavLinkStyle to = "/food/">Food Section</NavLinkStyle></ListStyle>
                     <ListStyle><NavLinkStyle to = "/drink/">Drink Section</NavLinkStyle></ListStyle>
                     <ListStyle><NavLinkStyle to = "/dessert/">Dessert Section</NavLinkStyle></ListStyle>
+                    <ListStyle><NavLinkStyle to = "/loginforAdmin/">loginforAdmin</NavLinkStyle></ListStyle>
                 </UnListStyle>
             </NavStyle>
         );
