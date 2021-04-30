@@ -26,20 +26,41 @@ const NavLinkStyle = styled(NavLink)`
 
 class NavigationBar extends Component
 {
+    logoutset()
+    {
+        localStorage.clear();
+        alert("logout successful");
+        window.location.reload();
+    }
     render()
     {
-        return (
-            <NavStyle>
-                <UnListStyle>
-                    <ListStyle><NavLinkStyle to = "/">DASHBORD</NavLinkStyle></ListStyle>
-                    <ListStyle><NavLinkStyle to = "/user/">User Section</NavLinkStyle></ListStyle>
-                    <ListStyle><NavLinkStyle to = "/food/">Food Section</NavLinkStyle></ListStyle>
-                    <ListStyle><NavLinkStyle to = "/drink/">Drink Section</NavLinkStyle></ListStyle>
-                    <ListStyle><NavLinkStyle to = "/dessert/">Dessert Section</NavLinkStyle></ListStyle>
-                    <ListStyle><NavLinkStyle to = "/loginforAdmin/">loginforAdmin</NavLinkStyle></ListStyle>
-                </UnListStyle>
-            </NavStyle>
-        );
+        const login = localStorage.getItem('login');
+        if(login)
+        {
+            return (
+                <NavStyle>
+                    <UnListStyle>
+                        <ListStyle><NavLinkStyle to = "/">DASHBORD</NavLinkStyle></ListStyle>
+                        <ListStyle><NavLinkStyle to = "/user/">User Section</NavLinkStyle></ListStyle>
+                        <ListStyle><NavLinkStyle to = "/food/">Food Section</NavLinkStyle></ListStyle>
+                        <ListStyle><NavLinkStyle to = "/drink/">Drink Section</NavLinkStyle></ListStyle>
+                        <ListStyle><NavLinkStyle to = "/dessert/">Dessert Section</NavLinkStyle></ListStyle>
+                        <ListStyle><NavLinkStyle to = "/loginforAdmin/">loginforAdmin</NavLinkStyle></ListStyle>
+                        <ListStyle><button onClick = {this.logoutset}>logout</button></ListStyle>
+                    </UnListStyle>
+                </NavStyle>
+            );
+        }
+        else {
+            return (
+                <NavStyle>
+                    <UnListStyle>
+                        <ListStyle><NavLinkStyle to = "/">DASHBORD</NavLinkStyle></ListStyle>
+                        <ListStyle><NavLinkStyle to = "/loginforAdmin/">loginforAdmin</NavLinkStyle></ListStyle>
+                    </UnListStyle>
+                </NavStyle>
+            );
+        }
     }
 }
 
