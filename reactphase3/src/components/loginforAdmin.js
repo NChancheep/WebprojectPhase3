@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 
 const H1Style = styled.h1`
@@ -19,6 +18,7 @@ class loginforAdmin extends React.Component
           age: "",
           email: "",
           address: "",
+
         };
     
         this.handleChange = this.handleChange.bind(this);
@@ -62,8 +62,10 @@ class loginforAdmin extends React.Component
             localStorage.setItem("login", true);
             localStorage.setItem("admin", true);
             alert("Welcome back "+res.data.firstname+" "+res.data.lastname);
-            //location.replace("https://www.youtube.com/");
-            window.location.assign("http://localhost:3002/");
+
+            // location.replace("HtmlAdminpage.html");
+            window.location.assign("http://localhost:3000/");
+
         }
     }
     render()
@@ -87,6 +89,7 @@ class loginforAdmin extends React.Component
                     
                     <input type = "submit" value = "Submit" onClick = {this.adminLogin}/>
                 </div>
+
             </div>
         );
     }
