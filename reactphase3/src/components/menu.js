@@ -138,7 +138,7 @@ class Menu extends React.Component
             lists += `<li>User ID: ${user.login_id} | Username: ${user.username} | Role: ${user.role} | Log: ${user.log} | [Name: ${user.firstname} ${user.lastname}] | Address: ${user.address} | Age: ${user.age} | Preferences: ${user.preferences} | Email: ${user.email}</li>`
         });
         lists += `</ul>`;
-        console.log(lists);
+        console.log(lists); 
         return lists;
         
     }
