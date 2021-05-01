@@ -40,6 +40,7 @@ class DrinkSection extends React.Component
           drinkname2:"",
           drinkprice2:"",
           drinkname3:"",
+          findname:""
         };
     
         this.handleChange = this.handleChange.bind(this);
@@ -48,6 +49,7 @@ class DrinkSection extends React.Component
         this.insertDrink = this.insertDrink.bind(this);
         this.updateDrink = this.updateDrink.bind(this);
         this.deleteDrink = this.deleteDrink.bind(this);
+        this.selectByfindname = this.selectByfindname.bind(this);
       }
     
       handleChange(e) {
@@ -144,6 +146,20 @@ class DrinkSection extends React.Component
         document.getElementById("deleteDrinkResult").innerHTML = res.message;
         return res.message;
     }
+    async selectByfindname() {
+        const res = await (await fetch("http://localhost:3030/admin/search&/Drinkname/" + this.state.findname, {
+            method: 'GET'
+        })).json();
+        console.log(res);
+        let lists = `<ul>`;
+        res.data.forEach(Drink => {
+            localStorage.setItem("productName", Drink.Drink_Name);
+            localStorage.setItem("productPrice", Drink.Drink_Price);
+            // lists += `<li>Drink Name: ${Drink.Drink_Name} | Drink Price: ${Drink.Drink_Price}</li>`
+            window.location.assign("http://localhost:3000/results");
+        });
+        
+    }
     render()
     {
         return(
@@ -205,6 +221,15 @@ class DrinkSection extends React.Component
                 <div id = "deleteDrinkResult"></div>
                 </LabelStyle>
             </DivStyle>    
+            <DivStyle>
+                    <LabelStyle>
+                    <h1>go to the page for the information</h1>
+                    <p>Input the drink name to know you want (you can find the userID by use select all function above)</p>
+                    <input type="text" name="findname" className="form-control" value = {this.state.findname} onChange = {this.handleChange}/>
+                    <br/>
+                    <Button type = "submit" value = "Search" onClick = {this.selectByfindname}>Search</Button>
+                    </LabelStyle>
+                </DivStyle> 
         </div>    
         );
     }

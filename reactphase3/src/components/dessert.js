@@ -40,6 +40,7 @@ class DessertSection extends React.Component
           dessertname2:"",
           dessertprice2:"",
           dessertname3:"",
+          findname:""
         };
     
         this.handleChange = this.handleChange.bind(this);
@@ -48,6 +49,7 @@ class DessertSection extends React.Component
         this.insertDessert = this.insertDessert.bind(this);
         this.updateDessert = this.updateDessert.bind(this);
         this.deleteDessert = this.deleteDessert.bind(this);
+        this.selectByfindname = this.selectByfindname.bind(this);
       }
     
       handleChange(e) {
@@ -143,6 +145,29 @@ class DessertSection extends React.Component
         document.getElementById("deleteDessertResult").innerHTML = res.message;
         return res.message;
     }
+    async selectByfindname() {
+        const res = await (await fetch("http://localhost:3030/admin/search&/Dessertname/" + this.state.findname, {
+            method: 'GET'
+        })).json();
+        console.log(res.data);
+        res.data.forEach(Dessert => {
+            localStorage.setItem("productName", Dessert.Dessert_Name);
+            localStorage.setItem("productPrice", Dessert.Dessert_Price);
+        });
+        // console.log(res.data.Dessert_Name);
+        // console.log(res.data.Dessert_Price);
+        // localStorage.setItem("productName", res.data.Dessert_Name);
+        // localStorage.setItem("productPrice", res.data.Dessert_Price);
+        window.location.assign("http://localhost:3000/results");
+        // let lists = `<ul>`;
+        // res.data.forEach(Dessert => {
+        //     lists += `<li>Dessert Name: ${Dessert.Dessert_Name} | Dessert Price: ${Dessert.Dessert_Price}</li>`
+        // });
+        // lists += `</ul>`;
+        // document.getElementById("byDessertName").innerHTML = lists;
+        // return lists;
+
+    }
     render()
     {
         return(
@@ -203,6 +228,15 @@ class DessertSection extends React.Component
                 <div id = "deleteDessertResult"></div>
                 </LabelStyle>
             </DivStyle>    
+            <DivStyle>
+                    <LabelStyle>
+                    <h1>go to the page for the information</h1>
+                    <p>Input the dessert name to know you want (you can find the userID by use select all function above)</p>
+                    <input type="text" name="findname" className="form-control" value = {this.state.findname} onChange = {this.handleChange}/>
+                    <br/>
+                    <Button type = "submit" value = "Search" onClick = {this.selectByfindname}>Search</Button>
+                    </LabelStyle>
+                </DivStyle>  
             </div>  
         );
     }
