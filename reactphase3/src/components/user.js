@@ -177,6 +177,7 @@ class UserSection extends React.Component
         localStorage.setItem("accaddress", user.address);
         localStorage.setItem("accage", user.age);
         localStorage.setItem("accrole", user.role);
+        localStorage.setItem("accPre", user.preferences);
         alert("redirect to account information of "+user.firstname+" "+user.lastname);
         window.location.assign("http://localhost:3000/accountinfo");
 

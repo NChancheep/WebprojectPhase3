@@ -65,12 +65,13 @@ class accountinfo extends React.Component {
             const address = localStorage.getItem('accaddress');
             const age = localStorage.getItem('accage');
             const role = localStorage.getItem('accrole');
+            const pre = localStorage.getItem('accPre');
             // console.log(fName)
             return (
             <div>
                 <DivStyle>
                     <H1Style>
-                        <img src="https://www.flaticon.com/svg/vstatic/svg/456/456212.svg?token=exp=1619881540~hmac=55a036eb2777b5899536308f7ccf813c" alt="new" style={{width:"40%"}} />
+                        <img src = {pre}  alt="new" style={{width:"40%"}} />
                         <H2Style>USER INFORMATION</H2Style>
                         <b>{fName} {lName}</b>
                         <p>Age: {age}</p>

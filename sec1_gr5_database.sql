@@ -22,7 +22,7 @@ CREATE TABLE Login_Information
   `lastname` varchar(20) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
   `age` int(2) DEFAULT NULL,
-  `preferences` varchar(50) DEFAULT NULL,
+  `preferences` longtext DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   PRIMARY KEY (login_id)
 );
@@ -200,7 +200,7 @@ CREATE TABLE Drink
 --
 
 INSERT INTO Login_Information ( `username`, `password`, `firstname`, `lastname`, `address`, `age`, `preferences`, `email`) VALUES
-("apadij", "itcs212_1", "Jidapa", "Kraisangka", "MUICT", 30, "Not Spicy Food", "jidapa.kra@mahidol.ac.th"),
+("apadij", "itcs212_1", "Jidapa", "Kraisangka", "MUICT", 30, "https://muhr.mahidol.ac.th/muprofile/profile/1101401337454_20191015171509.jpg", "jidapa.kra@mahidol.ac.th"),
 ("kculialip", "itcs381_1", "Pilailuck", "Panphattarasap", "MUICT", 35, "Not Spicy Food", "pilailuck.pan@mahidol.ac.th"),
 ("trahcihduw", "itcs212_2", "Wudhichart", "Sawangphol", "MUICT", 40, "Not Spicy Food", "wudhichart.saw@mahidol.ac.th"),
 ("tisnoob", "itcs323_1", "Boonsit", "Yimwadsana", "MUICT", 45, "Not Spicy Food", "boonsit.yim@mahidol.ac.th"),
