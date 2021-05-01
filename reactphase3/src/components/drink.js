@@ -26,7 +26,7 @@ const Button = styled.button`
   border-radius: 5px;
   margin: 10px 0px;
   cursor: pointer;
-
+`;
 
 class DrinkSection extends React.Component
 {
@@ -73,7 +73,6 @@ class DrinkSection extends React.Component
         lists += `</ul>`;
         document.getElementById("allDrink").innerHTML = lists;
         return lists;
-
     }
     async selectByDrinkName() {
         const res = await (await fetch("http://localhost:3030/admin/search&/Drinkname/" + this.state.name, {
@@ -87,7 +86,6 @@ class DrinkSection extends React.Component
         lists += `</ul>`;
         document.getElementById("byDrinkName").innerHTML = lists;
         return lists;
-
     }
     async selectByDrinkPrice() {
         const res = await (await fetch("http://localhost:3030/admin/search&/Drinkprice/" + this.state.price, {
@@ -101,7 +99,6 @@ class DrinkSection extends React.Component
         lists += `</ul>`;
         document.getElementById("byDrinkPrice").innerHTML = lists;
         return lists;
-
     }
     async insertDrink() {
         let info = {
@@ -119,7 +116,6 @@ class DrinkSection extends React.Component
         console.log(res);
         document.getElementById("insertDrinkResult").innerHTML = res.message;
         return res.message;
-
     }
     async updateDrink() {
         let info = {
@@ -137,7 +133,6 @@ class DrinkSection extends React.Component
         console.log(res)
         document.getElementById("updateDrinkResult").innerHTML = res.message;
         return res.message
-
     }
     async deleteDrink() {
         const res = await (await fetch("http://localhost:3030/admin/delete&/Drink/" + this.state.drinkname3, {
@@ -150,7 +145,6 @@ class DrinkSection extends React.Component
         console.log(res)
         document.getElementById("deleteDrinkResult").innerHTML = res.message;
         return res.message;
-
     }
     async selectByfindname() {
         const res = await (await fetch("http://localhost:3030/admin/search&/Drinkname/" + this.state.findname, {
@@ -165,15 +159,12 @@ class DrinkSection extends React.Component
             window.location.assign("http://localhost:3000/results");
         });
         
-
     }
     render()
     {
         return(
         <div>
             <H1Style>Drink Section</H1Style>
-
-
             <DivStyle>
                 <LabelStyle>
                 <h1>Search all!</h1>
@@ -188,7 +179,7 @@ class DrinkSection extends React.Component
                 <h1>Input drink name.</h1>
                 <p>Input drink Name to find more information.</p>
                 <input type="text" name="name" className="form-control" value = {this.state.name} onChange = {this.handleChange}/>
-                <Button type = "submit" value = "Search" onClick = {this.selectByDrinkName}>Search</Button>
+                <Button type = "submit" value = "Search" onClick = {this.selectByDrinkName}>Search by name</Button>
                 <div id = "byDrinkName"></div>
                 </LabelStyle>
             </DivStyle> 
@@ -197,7 +188,7 @@ class DrinkSection extends React.Component
                 <h1>Input information of drink.</h1>
                 <p>Input Drink Price to find more information.</p>
                 <input type="text" name="price" className="form-control" value = {this.state.price} onChange = {this.handleChange}/>
-                <Button type = "submit" value = "Search" onClick = {this.selectByDrinkPrice}>Search</Button>
+                <Button type = "submit" value = "Search" onClick = {this.selectByDrinkPrice}>Search by price</Button>
                 <div id = "byDrinkPrice"></div>
                 </LabelStyle>
             </DivStyle>   
@@ -207,7 +198,7 @@ class DrinkSection extends React.Component
                 <p>Fill in the information to insert a new drink into database.</p>
                 Drink Name:<input type="text" name="drinkname1" className="form-control" value = {this.state.drinkname1} onChange = {this.handleChange}/>
                 Drink Price:<input type="text" name="drinkprice1" className="form-control" value = {this.state.drinkprice1} onChange = {this.handleChange}/>
-                <Button type = "submit" value = "Insert" onClick = {this.insertDrink}>Search</Button>
+                <Button type = "submit" value = "Insert" onClick = {this.insertDrink}>Insert</Button>
                 <div id = "insertDrinkResult"></div>
                 </LabelStyle>
             </DivStyle>  
@@ -217,7 +208,7 @@ class DrinkSection extends React.Component
                 <p>Input the Drink Name, then fill the drink price to update the information.</p>
                 Drink Name:<input type="text" name="drinkname2" className="form-control" value = {this.state.drinkname2} onChange = {this.handleChange}/>
                 Drink Price:<input type="text" name="drinkprice2" className="form-control" value = {this.state.drinkprice2} onChange = {this.handleChange}/>
-                <Button type = "submit" value = "Insert" onClick = {this.updateDrink}>Search</Button>
+                <Button type = "submit" value = "Insert" onClick = {this.updateDrink}>Update</Button>
                 <div id = "updateDrinkResult"></div>
                 </LabelStyle>
             </DivStyle>
@@ -226,62 +217,7 @@ class DrinkSection extends React.Component
                 <h1>Delete information.</h1>
                 <p>Input the Drink Name that you want to delete.</p>
                 <input type="text" name="drinkname3" className="form-control" value = {this.state.drinkname3} onChange = {this.handleChange}/>
-                <Button type = "submit" value = "Insert" onClick = {this.deleteDrink}>Search</Button>
-                <div id = "deleteDrinkResult"></div>
-
-            <DivStyle>
-                <LabelStyle>
-                <h1>Search all!</h1>
-                <p>Search All Drinks in database.</p>
-                <Button type = "submit" value = "Search" onClick = {this.searchAllDrink}>Search</Button>
-                <div id = "allDrink"></div>
-                </LabelStyle>
-            </DivStyle>   
-
-            <DivStyle>
-                <LabelStyle>
-                <h1>Input drink name.</h1>
-                <p>Input drink Name to find more information.</p>
-                <input type="text" name="name" className="form-control" value = {this.state.name} onChange = {this.handleChange}/>
-                <Button type = "submit" value = "Search" onClick = {this.selectByDrinkName}>Search</Button>
-                <div id = "byDrinkName"></div>
-                </LabelStyle>
-            </DivStyle> 
-            <DivStyle>
-                <LabelStyle>
-                <h1>Input information of drink.</h1>
-                <p>Input Drink Price to find more information.</p>
-                <input type="text" name="price" className="form-control" value = {this.state.price} onChange = {this.handleChange}/>
-                <Button type = "submit" value = "Search" onClick = {this.selectByDrinkPrice}>Search</Button>
-                <div id = "byDrinkPrice"></div>
-                </LabelStyle>
-            </DivStyle>   
-            <DivStyle>
-                <LabelStyle><br/>
-                <h1>Insert drink information.</h1>
-                <p>Fill in the information to insert a new drink into database.</p>
-                Drink Name:<input type="text" name="drinkname1" className="form-control" value = {this.state.drinkname1} onChange = {this.handleChange}/>
-                Drink Price:<input type="text" name="drinkprice1" className="form-control" value = {this.state.drinkprice1} onChange = {this.handleChange}/>
-                <Button type = "submit" value = "Insert" onClick = {this.insertDrink}>Search</Button>
-                <div id = "insertDrinkResult"></div>
-                </LabelStyle>
-            </DivStyle>  
-            <DivStyle>
-                <LabelStyle><br/>
-                <h1>Update Drink information.</h1>
-                <p>Input the Drink Name, then fill the drink price to update the information.</p>
-                Drink Name:<input type="text" name="drinkname2" className="form-control" value = {this.state.drinkname2} onChange = {this.handleChange}/>
-                Drink Price:<input type="text" name="drinkprice2" className="form-control" value = {this.state.drinkprice2} onChange = {this.handleChange}/>
-                <Button type = "submit" value = "Insert" onClick = {this.updateDrink}>Search</Button>
-                <div id = "updateDrinkResult"></div>
-                </LabelStyle>
-            </DivStyle>
-            <DivStyle>
-                <LabelStyle><br/>
-                <h1>Delete information.</h1>
-                <p>Input the Drink Name that you want to delete.</p>
-                <input type="text" name="drinkname3" className="form-control" value = {this.state.drinkname3} onChange = {this.handleChange}/>
-                <Button type = "submit" value = "Insert" onClick = {this.deleteDrink}>Search</Button>
+                <Button type = "submit" value = "Insert" onClick = {this.deleteDrink}>Delete</Button>
                 <div id = "deleteDrinkResult"></div>
                 </LabelStyle>
             </DivStyle>    
