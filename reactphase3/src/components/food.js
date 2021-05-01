@@ -29,9 +29,11 @@ const Button = styled.button`
 `;
 
 
+
 const LabelStyle = styled.label`
     margin: 30px 20px;
 `;
+
 class FoodSection extends React.Component
 {
     constructor(props) {
@@ -43,7 +45,8 @@ class FoodSection extends React.Component
           foodprice1:"",
           foodname2:"",
           foodprice2:"",
-          foodname3:""
+          foodname3:"",
+          findname:""
         };
     
         this.handleChange = this.handleChange.bind(this);
@@ -52,6 +55,7 @@ class FoodSection extends React.Component
         this.insertFood = this.insertFood.bind(this);
         this.updateFood = this.updateFood.bind(this);
         this.deleteFood = this.deleteFood.bind(this);
+        this.selectByfindname = this.selectByfindname.bind(this);
       }
     
       handleChange(e) {
@@ -154,11 +158,28 @@ class FoodSection extends React.Component
         return res.message;
 
     }
+    async selectByfindname() {
+        const res = await (await fetch("http://localhost:3030/admin/search&/Foodname/" + this.state.findname, {
+            method: 'GET'
+        })).json();
+        console.log(res.data);
+  
+        res.data.forEach(Food => {
+            localStorage.setItem("productName", Food.Food_Name);
+            localStorage.setItem("productPrice", Food.Food_Price);
+            
+        });
+  
+        window.location.assign("http://localhost:3000/results");
+
+    }
     render()
     {
         return(
             <div>
                 <H1Style>Food Section</H1Style>
+
+
                 <DivStyle>
                         <LabelStyle>
                         <h1>Search all!</h1>
@@ -212,44 +233,71 @@ class FoodSection extends React.Component
                         <input type="text" name="foodname3" className="form-control" value = {this.state.foodname3} onChange = {this.handleChange}/>
                         <Button type = "submit" value = "Insert" onClick = {this.deleteFood}>Search</Button>
                         <div id = "deleteFoodResult"></div>
+
                 <DivStyle>
-                    <H1Style>Food Section</H1Style>
-                        <LabelStyle>Search All Foods in database.:
-                        <input type = "submit" value = "Search" onClick = {this.searchAllFood}/>
+                        <LabelStyle>
+                        <h1>Search all!</h1>
+                        <p>Search All Foods in database.</p>
+                        <Button type = "submit" value = "Search" onClick = {this.searchAllFood}>Search</Button>
+                        <div id = "allFood"></div>
                         </LabelStyle>
                 </DivStyle>   
                 <DivStyle>
-                        <LabelStyle>Input Food Name to find more information.:
+                        <LabelStyle>
+                        <h1>Input food name.</h1>
+                        <p>Input Food Name to find more information.</p>
                         <input type="text" name="name" className="form-control" value = {this.state.name} onChange = {this.handleChange}/>
-                        <input type = "submit" value = "Search" onClick = {this.selectByFoodName}/>
+                        <Button type = "submit" value = "Search" onClick = {this.selectByFoodName}>Search</Button>
+                        <div id = "byFoodName"></div>
                         </LabelStyle>
                 </DivStyle>   
                 <DivStyle>
-                        <LabelStyle>Input Food Price to find more information.:
+                        <LabelStyle>
+                        <h1>Input information of food.</h1>
+                        <p>Input Food Price to find more information.</p>
                         <input type="text" name="price" className="form-control" value = {this.state.price} onChange = {this.handleChange}/>
-                        <input type = "submit" value = "Find" onClick = {this.selectByFoodPrice}/>
+                        <Button type = "submit" value = "Find" onClick = {this.selectByFoodPrice}>Search</Button>
+                        <div id = "byFoodPrice"></div>
                         </LabelStyle>
                 </DivStyle>   
                 <DivStyle>
-                        <LabelStyle>Fill in the information to insert a new food into database.:<br/>
+                        <LabelStyle><br/>
+                        <h1>Insert food information.</h1>
+                        <p>Fill in the information to insert a new food into database.</p>
                         Food Name:<input type="text" name="foodname1" className="form-control" value = {this.state.foodname1} onChange = {this.handleChange}/>
                         Food Price:<input type="text" name="foodprice1" className="form-control" value = {this.state.foodprice1} onChange = {this.handleChange}/>
-                        <input type = "submit" value = "Insert" onClick = {this.insertFood}/>
+                        <Button type = "submit" value = "Insert" onClick = {this.insertFood}>Search</Button>
+                        <div id = "insertFoodResult"></div>
                         </LabelStyle>
                 </DivStyle>  
                 <DivStyle>
-                        <LabelStyle>Input the Food Name, then fill the food price to update the information.:<br/>
+                        <LabelStyle><br/>
+                        <h1>Update food information.</h1>
+                        <p>Input the Food Name, then fill the food price to update the information.:</p>
                         Food Name:<input type="text" name="foodname2" className="form-control" value = {this.state.foodname2} onChange = {this.handleChange}/>
                         Food Price:<input type="text" name="foodprice2" className="form-control" value = {this.state.foodprice2} onChange = {this.handleChange}/>
-                        <input type = "submit" value = "Insert" onClick = {this.updateFood}/>
+                        <Button type = "submit" value = "Insert" onClick = {this.updateFood}>Search</Button>
+                        <div id = "updateFoodResult"></div>
                         </LabelStyle>
                 </DivStyle>  
                 <DivStyle>
-                        <LabelStyle>Input the Food Name that you want to delete:<br/>
+                        <LabelStyle><br/>
+                        <h1>Delete information.</h1>
+                        <p>Input the Food Name that you want to delete.</p>
                         <input type="text" name="foodname3" className="form-control" value = {this.state.foodname3} onChange = {this.handleChange}/>
-                        <input type = "submit" value = "Insert" onClick = {this.deleteFood}/>
+                        <Button type = "submit" value = "Insert" onClick = {this.deleteFood}>Search</Button>
+                        <div id = "deleteFoodResult"></div>
                         </LabelStyle>
                 </DivStyle>  
+                <DivStyle>
+                    <LabelStyle>
+                    <h1>go to the page for the information</h1>
+                    <p>Input the drink name to know you want (you can find the userID by use select all function above)</p>
+                    <input type="text" name="findname" className="form-control" value = {this.state.findname} onChange = {this.handleChange}/>
+                    <br/>
+                    <Button type = "submit" value = "Search" onClick = {this.selectByfindname}>Search</Button>
+                    </LabelStyle>
+                </DivStyle> 
             </div>
         );
     }

@@ -42,6 +42,7 @@ class DessertSection extends React.Component
           dessertname2:"",
           dessertprice2:"",
           dessertname3:"",
+          findname:""
         };
     
         this.handleChange = this.handleChange.bind(this);
@@ -50,6 +51,7 @@ class DessertSection extends React.Component
         this.insertDessert = this.insertDessert.bind(this);
         this.updateDessert = this.updateDessert.bind(this);
         this.deleteDessert = this.deleteDessert.bind(this);
+        this.selectByfindname = this.selectByfindname.bind(this);
       }
     
       handleChange(e) {
@@ -85,9 +87,6 @@ class DessertSection extends React.Component
         });
         lists += `</ul>`;
 
-        document.getElementById("byDessertName").innerHTML = lists;
-        return lists;
-
     }
     async selectByDessertPrice() {
         const res = await (await fetch("http://localhost:3030/admin/search&/Dessertprice/" + this.state.price, {
@@ -99,9 +98,6 @@ class DessertSection extends React.Component
             lists += `<li>Dessert Name: ${Dessert.Dessert_Name} | Dessert Price: ${Dessert.Dessert_Price}</li>`
         });
         lists += `</ul>`;
-
-        document.getElementById("byDessertPrice").innerHTML = lists;
-        return lists;
 
     }
     async insertDessert() {
@@ -153,11 +149,35 @@ class DessertSection extends React.Component
         return res.message;
 
     }
+    async selectByfindname() {
+        const res = await (await fetch("http://localhost:3030/admin/search&/Dessertname/" + this.state.findname, {
+            method: 'GET'
+        })).json();
+        console.log(res.data);
+        res.data.forEach(Dessert => {
+            localStorage.setItem("productName", Dessert.Dessert_Name);
+            localStorage.setItem("productPrice", Dessert.Dessert_Price);
+        });
+        // console.log(res.data.Dessert_Name);
+        // console.log(res.data.Dessert_Price);
+        // localStorage.setItem("productName", res.data.Dessert_Name);
+        // localStorage.setItem("productPrice", res.data.Dessert_Price);
+        window.location.assign("http://localhost:3000/results");
+        // let lists = `<ul>`;
+        // res.data.forEach(Dessert => {
+        //     lists += `<li>Dessert Name: ${Dessert.Dessert_Name} | Dessert Price: ${Dessert.Dessert_Price}</li>`
+        // });
+        // lists += `</ul>`;
+        // document.getElementById("byDessertName").innerHTML = lists;
+        // return lists;
+    }
     render()
     {
         return(
             <div>
             <H1Style>Dessert Section</H1Style>
+
+
             <DivStyle>
                 <LabelStyle>
                 <h1>Search all!</h1>
@@ -211,44 +231,71 @@ class DessertSection extends React.Component
                 <input type="text" name="dessertname3" className="form-control" value = {this.state.dessertname3} onChange = {this.handleChange}/>
                 <Button type = "submit" value = "Delete" onClick = {this.deleteDessert}>Search</Button>
                 <div id = "deleteDessertResult"></div>
+
             <DivStyle>
-                <H1Style>Dessert Section</H1Style>
-                <LabelStyle>Search All Desserts in database.: 
-                <input type = "submit" value = "Search" onClick = {this.searchAllDessert}/>
+                <LabelStyle>
+                <h1>Search all!</h1>
+                <p>Search All dessert in database.</p>
+                <Button type = "submit" value = "Search" onClick = {this.searchAllDessert}>Search</Button>
+                <div id = "allDessert"></div>
                 </LabelStyle>
             </DivStyle> 
             <DivStyle>
-                <LabelStyle>Input Dessert Name to find more information.:
+                <LabelStyle>
+                <h1>Input drink name.</h1>
+                <p>Input dessert Name to find more information.</p>
                 <input type="text" name="name" className="form-control" value = {this.state.name} onChange = {this.handleChange}/>
-                <input type = "submit" value = "Search" onClick = {this.selectByDessertName}/>
+                <Button type = "submit" value = "Search" onClick = {this.selectByDessertName}>Search</Button>
+                <div id = "byDessertName"></div>
                 </LabelStyle>
             </DivStyle> 
             <DivStyle>
-                <LabelStyle>Input Dessert Price to find more information.:
+                <LabelStyle>
+                <h1>Input information of dessert.</h1>
+                <p>Input Dessert Price to find more information.</p>
                 <input type="text" name="price" className="form-control" value = {this.state.price} onChange = {this.handleChange}/>
-                <input type = "submit" value = "Search" onClick = {this.selectByDessertPrice}/>
+                <Button type = "submit" value = "Search" onClick = {this.selectByDessertPrice}>Search</Button>
+                <div id = "byDessertPrice"></div>
                 </LabelStyle>
             </DivStyle>
             <DivStyle>
-                <LabelStyle>Fill in the information to insert a new dessert into database.:<br/>
+                <LabelStyle><br/>
+                <h1>Insert dessert information.</h1>
+                <p>Fill in the information to insert a new dessert into database.</p>
                 dessert Name:<input type="text" name="dessertname1" className="form-control" value = {this.state.dessertname1} onChange = {this.handleChange}/>
                 dessert Price:<input type="text" name="dessertprice1" className="form-control" value = {this.state.dessertprice1} onChange = {this.handleChange}/>
-                <input type = "submit" value = "Insert" onClick = {this.insertDessert}/>
+                <Button type = "submit" value = "Insert" onClick = {this.insertDessert}>Search</Button>
+                <div id = "insertDessertResult"></div>
                 </LabelStyle>
             </DivStyle> 
             <DivStyle>
-                <LabelStyle>Input the Dessert Name, then fill the dessert price to update the information.:<br/>
+                <LabelStyle><br/>
+                <h1>Update Dessert information.</h1>
+                <p>Input the dessert Name, then fill the dessert price to update the information.</p>
                 dessert Name:<input type="text" name="dessertname2" className="form-control" value = {this.state.dessertname2} onChange = {this.handleChange}/>
                 dessert Price:<input type="text" name="dessertprice2" className="form-control" value = {this.state.dessertprice2} onChange = {this.handleChange}/>
-                <input type = "submit" value = "Insert" onClick = {this.updateDessert}/>
+                <Button type = "submit" value = "Insert" onClick = {this.updateDessert}>Search</Button>
+                <div id = "updateDessertResult"></div>
                 </LabelStyle>
             </DivStyle> 
             <DivStyle>
-                <LabelStyle>Input the Dessert Name that you want to delete:<br/>
+                <LabelStyle><br/>
+                <h1>Delete information.</h1>
+                <p>Input the Dessert Name that you want to delete.</p>
                 <input type="text" name="dessertname3" className="form-control" value = {this.state.dessertname3} onChange = {this.handleChange}/>
-                <input type = "submit" value = "Delete" onClick = {this.deleteDessert}/>
+                <Button type = "submit" value = "Delete" onClick = {this.deleteDessert}>Search</Button>
+                <div id = "deleteDessertResult"></div>
                 </LabelStyle>
             </DivStyle>    
+            <DivStyle>
+                    <LabelStyle>
+                    <h1>go to the page for the information</h1>
+                    <p>Input the dessert name to know you want (you can find the userID by use select all function above)</p>
+                    <input type="text" name="findname" className="form-control" value = {this.state.findname} onChange = {this.handleChange}/>
+                    <br/>
+                    <Button type = "submit" value = "Search" onClick = {this.selectByfindname}>Search</Button>
+                    </LabelStyle>
+                </DivStyle>  
             </div>  
         );
     }
