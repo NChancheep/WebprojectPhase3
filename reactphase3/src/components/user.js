@@ -56,7 +56,8 @@ class UserSection extends React.Component
           age2:"",
           preferences2:"",
           email2:"",
-          id3:""
+          id3:"",
+          findID:""
         };
     
         this.handleChange = this.handleChange.bind(this);
@@ -64,6 +65,7 @@ class UserSection extends React.Component
         this.insertUser = this.insertUser.bind(this);
         this.updateUser = this.updateUser.bind(this);
         this.deleteUser = this.deleteUser.bind(this);
+        this.selectByfindid = this.selectByfindid.bind(this);
       }
     
       handleChange(e) {
@@ -161,6 +163,26 @@ class UserSection extends React.Component
         return res.massage;
     }
 
+    async selectByfindid() {
+        console.log(this.state.findID)
+        const res = await (await fetch("http://localhost:3030/admin/search&/User/" + this.state.findID, {
+            method: 'GET'
+        })).json();
+        console.log(res.data);
+        let user = res.data;
+        localStorage.setItem("accfirstname", user.firstname);
+        localStorage.setItem("acclastname", user.lastname);
+        localStorage.setItem("accage", user.age);
+        localStorage.setItem("accemail", user.email);
+        localStorage.setItem("accaddress", user.address);
+        localStorage.setItem("accage", user.age);
+        localStorage.setItem("accrole", user.role);
+        alert("redirect to account information of "+user.firstname+" "+user.lastname);
+        window.location.assign("http://localhost:3000/accountinfo");
+
+        // document.getElementById("byUserId").innerHTML = `Username: ${user.username} | Role: ${user.role} | Log: ${user.log} | [Name: ${user.firstname} ${user.lastname}] | Address: ${user.address} | Age: ${user.age} | Preferences: ${user.preferences} | Email: ${user.email}`;
+        // return `Username: ${user.username} | Role: ${user.role} | Log: ${user.log} | [Name: ${user.firstname} ${user.lastname}] | Address: ${user.address} | Age: ${user.age} | Preferences: ${user.preferences} | Email: ${user.email}`;
+    }
     render()
     {
         return (
@@ -247,7 +269,16 @@ class UserSection extends React.Component
                     <Button type = "submit" value = "delete" onClick = {this.deleteUser}>Search</Button>
                     <div id = "deleteUserResult"></div>
                     </LabelStyle>
-                </DivStyle>                  
+                </DivStyle>        
+                <DivStyle>
+                    <LabelStyle>
+                    <h1>go to the page for the information</h1>
+                    <p>Input the User ID to know who you want (you can find the userID by use select all function above)</p>
+                    <input type="text" name="findID" className="form-control" value = {this.state.findID} onChange = {this.handleChange}/>
+                    <br/>
+                    <Button type = "submit" value = "Search" onClick = {this.selectByfindid}>Search</Button>
+                    </LabelStyle>
+                </DivStyle>           
             </div>
         );
     }

@@ -11,6 +11,7 @@ import DrinkSection from "./components/drink";
 import DessertSection from "./components/dessert";
 
 import loginforAdmin from "./components/loginforAdmin";
+import accountinfo from "./components/accountinfo";
 
 class App extends Component
 {
@@ -29,6 +30,7 @@ class App extends Component
             <Route path = "/recipe" component = {Recipe}/>
             <Route path = "/menu" component = {Menu}/>
             <Route path = "/loginforAdmin" component = {loginforAdmin}/>
+            <Route path = "/accountinfo" component = {accountinfo}/>
           </Switch>
         </div>
       </BrowserRouter>
