@@ -24,6 +24,11 @@ const NavLinkStyle = styled(NavLink)`
     color: white;
 `;
 
+const Button = styled.button`
+  background-color: black;
+  color: white;
+`;
+
 class NavigationBar extends Component
 {
     logoutset()
@@ -34,6 +39,7 @@ class NavigationBar extends Component
     }
     render()
     {
+
         const login = localStorage.getItem('login');
         if(login)
         {
@@ -45,7 +51,7 @@ class NavigationBar extends Component
                         <ListStyle><NavLinkStyle to = "/food/">Food Section</NavLinkStyle></ListStyle>
                         <ListStyle><NavLinkStyle to = "/drink/">Drink Section</NavLinkStyle></ListStyle>
                         <ListStyle><NavLinkStyle to = "/dessert/">Dessert Section</NavLinkStyle></ListStyle>
-                        <ListStyle><button onClick = {this.logoutset}>logout</button></ListStyle>
+                        <ListStyle><Button onClick = {this.logoutset}>logout</Button></ListStyle>
                     </UnListStyle>
                 </NavStyle>
             );

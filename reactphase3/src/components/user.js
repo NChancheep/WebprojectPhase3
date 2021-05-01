@@ -9,13 +9,27 @@ const DivStyle = styled.div`
 `;
 
 const H1Style = styled.h1`
-    display: flex;
     margin: 20px;
+    text-align: Center;
+    background-color: gray;
+    color: white;
+    padding: 20px;
 `;
 
 
 const LabelStyle = styled.label`
     margin: 30px 20px;
+`;
+
+
+const Button = styled.button`
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
 `;
 
 
@@ -71,16 +85,19 @@ class UserSection extends React.Component
         });
         lists += `</ul>`;
         console.log(lists);
-        
+        document.getElementById("allUser").innerHTML = lists;
+        return lists;
     }
     async selectByUserId() {
         console.log(this.state.id)
+        let user 
         const res = await (await fetch("http://localhost:3030/admin/search&/User/" + this.state.id, {
             method: 'GET'
         })).json();
         console.log(res.data);
-        let user = res.data;
-        // document.getElementById("byUserId").innerHTML = `Username: ${user.username} | Role: ${user.role} | Log: ${user.log} | [Name: ${user.firstname} ${user.lastname}] | Address: ${user.address} | Age: ${user.age} | Preferences: ${user.preferences} | Email: ${user.email}`;
+        user = res.data;
+        document.getElementById("byUserId").innerHTML = `Username: ${user.username} | Role: ${user.role} | Log: ${user.log} | [Name: ${user.firstname} ${user.lastname}] | Address: ${user.address} | Age: ${user.age} | Preferences: ${user.preferences} | Email: ${user.email}`;
+        return `Username: ${user.username} | Role: ${user.role} | Log: ${user.log} | [Name: ${user.firstname} ${user.lastname}] | Address: ${user.address} | Age: ${user.age} | Preferences: ${user.preferences} | Email: ${user.email}`;
     }
 
     async insertUser() {
@@ -103,7 +120,8 @@ class UserSection extends React.Component
             body: JSON.stringify(info)
         })).json();
         console.log(res.data);
-        // document.getElementById("insertUserResult").innerHTML = res.message;
+        document.getElementById("insertUserResult").innerHTML = res.message;
+        return res.message;
     }
     async updateUser() {
         let info = {
@@ -126,7 +144,8 @@ class UserSection extends React.Component
             body: JSON.stringify(info)
         })).json();
         console.log(res.data)
-    //     // document.getElementById("updateUserResult").innerHTML = res.message;
+        document.getElementById("updateUserResult").innerHTML = res.message;
+        return res.massage;
     }
 
     async deleteUser() {
@@ -138,59 +157,95 @@ class UserSection extends React.Component
             body: JSON.stringify({login_id: this.state.id3, dummy: "test"})
         })).json();
         console.log(res)
-        // document.getElementById("deleteUserResult").innerHTML = res.message;
+        document.getElementById("deleteUserResult").innerHTML = res.message;
+        return res.massage;
     }
 
     render()
     {
         return (
             <div>
+                <H1Style>User Section</H1Style>
                 <DivStyle>
-                    <H1Style>User Section</H1Style>
-                        <LabelStyle>Search for all user!:
-                        <input type = "submit" value = "Search" onClick = {this.searchAllUser}/>
-                        </LabelStyle>
+                    <LabelStyle>
+                        <h1>Search all!</h1>
+                        <p>Click to search all user</p>
+                        <Button type = "submit" value = "Search" onClick = {this.searchAllUser}>Search</Button>
+                        <div id = "allUser"></div>
+                    </LabelStyle>
                 </DivStyle>   
+
                 <DivStyle>
-                    <LabelStyle>Input the User ID to find more information!:
+                    <LabelStyle>
+                    <h1>Input ID</h1>
+                    <p>Input the User ID to find more information (Just ID!!)</p>
                     <input type="text" name="id" className="form-control" value = {this.state.id} onChange = {this.handleChange}/>
-                    <input type = "submit" value = "Search" onClick = {this.selectByUserId}/>
+                    <br/>
+                    <Button type = "submit" value = "Search" onClick = {this.selectByUserId}>Search</Button>
+                    <div id = "byUserId"></div>
                     </LabelStyle>
                 </DivStyle> 
+
                 <DivStyle>
-                    <H1Style>Fill in the information to insert a new user into database.</H1Style>
                     <LabelStyle>
-                    user:<input type="text" name="username1" className="form-control" value = {this.state.username1} onChange = {this.handleChange}/>
-                    password:<input type="text" name="password1" className="form-control" value = {this.state.password1} onChange = {this.handleChange}/>
-                    Firstname:<input type="text" name="firstname1" className="form-control" value = {this.state.firstname1} onChange = {this.handleChange}/>
-                    Lastname:<input type="text" name="lastname1" className="form-control" value = {this.state.lastname1} onChange = {this.handleChange}/>
-                    Address:<input type="text" name="address1" className="form-control" value = {this.state.address1} onChange = {this.handleChange}/>
-                    Age:<input type="text" name="age1" className="form-control" value = {this.state.age1} onChange = {this.handleChange}/>
-                    Preferences:<input type="text" name="preferences1" className="form-control" value = {this.state.preferences1} onChange = {this.handleChange}/>
-                    Email:<input type="text" name="email1" className="form-control" value = {this.state.email1} onChange = {this.handleChange}/>
-                    <input type = "submit" value = "Insert" onClick = {this.insertUser}/>
+                    <h1>Insert information.</h1>
+                    <p>Fill in the information to insert a new user into database.</p>
+                    user<input type="text" name="username1" className="form-control" value = {this.state.username1} onChange = {this.handleChange}/>
+                    <br/>
+                    password<input type="text" name="password1" className="form-control" value = {this.state.password1} onChange = {this.handleChange}/>
+                    <br/>
+                    Firstname<input type="text" name="firstname1" className="form-control" value = {this.state.firstname1} onChange = {this.handleChange}/>
+                    <br/>
+                    Lastname<input type="text" name="lastname1" className="form-control" value = {this.state.lastname1} onChange = {this.handleChange}/>
+                    <br/>
+                    Address<input type="text" name="address1" className="form-control" value = {this.state.address1} onChange = {this.handleChange}/>
+                    <br/>
+                    Age<input type="text" name="age1" className="form-control" value = {this.state.age1} onChange = {this.handleChange}/>
+                    <br/>
+                    Preferences<input type="text" name="preferences1" className="form-control" value = {this.state.preferences1} onChange = {this.handleChange}/>
+                    <br/>
+                    Email<input type="text" name="email1" className="form-control" value = {this.state.email1} onChange = {this.handleChange}/>
+                    <br/>
+                    <Button type = "submit" value = "Insert" onClick = {this.insertUser}>Search</Button>
+                    <div id = "insertUserResult"></div>
                     </LabelStyle>
                 </DivStyle>   
+
                 <DivStyle>
-                    <H1Style>Input the User ID, then fill the information that you want to update.</H1Style>
                     <LabelStyle>
-                    user id:<input type="text" name="id2" className="form-control" value = {this.state.id2} onChange = {this.handleChange}/>
-                    user:<input type="text" name="username2" className="form-control" value = {this.state.username2} onChange = {this.handleChange}/>
-                    password:<input type="text" name="password2" className="form-control" value = {this.state.password2} onChange = {this.handleChange}/>
-                    Firstname:<input type="text" name="firstname2" className="form-control" value = {this.state.firstname2} onChange = {this.handleChange}/>
-                    Lastname:<input type="text" name="lastname2" className="form-control" value = {this.state.lastname2} onChange = {this.handleChange}/>
-                    Address:<input type="text" name="address2" className="form-control" value = {this.state.address2} onChange = {this.handleChange}/>
-                    Age:<input type="text" name="age2" className="form-control" value = {this.state.age2} onChange = {this.handleChange}/>
-                    Preferences:<input type="text" name="preferences2" className="form-control" value = {this.state.preferences2} onChange = {this.handleChange}/>
-                    Email:<input type="text" name="email2" className="form-control" value = {this.state.email2} onChange = {this.handleChange}/>
-                    <input type = "submit" value = "Update" onClick = {this.updateUser}/>
+                    <h1>Update information.</h1>
+                    <p>Input the User ID, then fill the information that you want to update.</p>
+                    user id<input type="text" name="id2" className="form-control" value = {this.state.id2} onChange = {this.handleChange}/>
+                    <br/>
+                    user<input type="text" name="username2" className="form-control" value = {this.state.username2} onChange = {this.handleChange}/>
+                    <br/>
+                    password<input type="text" name="password2" className="form-control" value = {this.state.password2} onChange = {this.handleChange}/>
+                    <br/>
+                    Firstname<input type="text" name="firstname2" className="form-control" value = {this.state.firstname2} onChange = {this.handleChange}/>
+                    <br/>
+                    Lastname<input type="text" name="lastname2" className="form-control" value = {this.state.lastname2} onChange = {this.handleChange}/>
+                    <br/>
+                    Address<input type="text" name="address2" className="form-control" value = {this.state.address2} onChange = {this.handleChange}/>
+                    <br/>
+                    Age<input type="text" name="age2" className="form-control" value = {this.state.age2} onChange = {this.handleChange}/>
+                    <br/>
+                    Preferences<input type="text" name="preferences2" className="form-control" value = {this.state.preferences2} onChange = {this.handleChange}/>
+                    <br/>
+                    Email<input type="text" name="email2" className="form-control" value = {this.state.email2} onChange = {this.handleChange}/>
+                    <br/>
+                    <Button type = "submit" value = "Update" onClick = {this.updateUser}>Search</Button>
+                    <div id = "updateUserResult"></div>
                     </LabelStyle>
                 </DivStyle> 
+
                 <DivStyle>
-                    <H1Style>Input the User ID that you want to delete</H1Style>
                     <LabelStyle>
-                    user id:<input type="text" name="id3" className="form-control" value = {this.state.id3} onChange = {this.handleChange}/>
-                    <input type = "submit" value = "delete" onClick = {this.deleteUser}/>
+                    <h1>Delete information.</h1>
+                    <p>Input the User ID that you want to delete.</p>
+                    user id<input type="text" name="id3" className="form-control" value = {this.state.id3} onChange = {this.handleChange}/>
+                    <br/>
+                    <Button type = "submit" value = "delete" onClick = {this.deleteUser}>Search</Button>
+                    <div id = "deleteUserResult"></div>
                     </LabelStyle>
                 </DivStyle>                  
             </div>
