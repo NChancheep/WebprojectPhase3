@@ -34,7 +34,6 @@ class NavigationBar extends Component
     }
     render()
     {
-
         const login = localStorage.getItem('login');
         if(login)
         {
@@ -62,6 +61,7 @@ class NavigationBar extends Component
                 </NavStyle>
             );
         }
-
+    }
+}
 
 export default NavigationBar;
