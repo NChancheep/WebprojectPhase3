@@ -18,6 +18,7 @@ const LabelStyle = styled.label`
     margin: 30px 20px;
 `;
 
+
 const Button = styled.button`
   background-color: black;
   color: white;
@@ -27,6 +28,7 @@ const Button = styled.button`
   margin: 10px 0px;
   cursor: pointer;
 `;
+
 
 class DessertSection extends React.Component
 {
@@ -70,6 +72,7 @@ class DessertSection extends React.Component
         lists += `</ul>`;
         document.getElementById("allDessert").innerHTML = lists;
         return lists;
+
     }
     async selectByDessertName() {
         const res = await (await fetch("http://localhost:3030/admin/search&/Dessertname/" + this.state.name, {
@@ -81,8 +84,10 @@ class DessertSection extends React.Component
             lists += `<li>Dessert Name: ${Dessert.Dessert_Name} | Dessert Price: ${Dessert.Dessert_Price}</li>`
         });
         lists += `</ul>`;
+
         document.getElementById("byDessertName").innerHTML = lists;
         return lists;
+
     }
     async selectByDessertPrice() {
         const res = await (await fetch("http://localhost:3030/admin/search&/Dessertprice/" + this.state.price, {
@@ -94,8 +99,10 @@ class DessertSection extends React.Component
             lists += `<li>Dessert Name: ${Dessert.Dessert_Name} | Dessert Price: ${Dessert.Dessert_Price}</li>`
         });
         lists += `</ul>`;
+
         document.getElementById("byDessertPrice").innerHTML = lists;
         return lists;
+
     }
     async insertDessert() {
         let info = {
@@ -113,6 +120,7 @@ class DessertSection extends React.Component
         console.log(res);
         document.getElementById("insertDessertResult").innerHTML = res.message;
         return res.message;
+
     }
     async updateDessert() {
         let info = {
@@ -130,6 +138,7 @@ class DessertSection extends React.Component
         console.log(res)
         document.getElementById("updateDessertResult").innerHTML = res.message;
         return res.message;
+
     }
     async deleteDessert() {
         const res = await (await fetch("http://localhost:3030/admin/delete&/Dessert/" + this.state.dessertname3, {
@@ -142,6 +151,7 @@ class DessertSection extends React.Component
         console.log(res)
         document.getElementById("deleteDessertResult").innerHTML = res.message;
         return res.message;
+
     }
     render()
     {
@@ -201,6 +211,42 @@ class DessertSection extends React.Component
                 <input type="text" name="dessertname3" className="form-control" value = {this.state.dessertname3} onChange = {this.handleChange}/>
                 <Button type = "submit" value = "Delete" onClick = {this.deleteDessert}>Search</Button>
                 <div id = "deleteDessertResult"></div>
+            <DivStyle>
+                <H1Style>Dessert Section</H1Style>
+                <LabelStyle>Search All Desserts in database.: 
+                <input type = "submit" value = "Search" onClick = {this.searchAllDessert}/>
+                </LabelStyle>
+            </DivStyle> 
+            <DivStyle>
+                <LabelStyle>Input Dessert Name to find more information.:
+                <input type="text" name="name" className="form-control" value = {this.state.name} onChange = {this.handleChange}/>
+                <input type = "submit" value = "Search" onClick = {this.selectByDessertName}/>
+                </LabelStyle>
+            </DivStyle> 
+            <DivStyle>
+                <LabelStyle>Input Dessert Price to find more information.:
+                <input type="text" name="price" className="form-control" value = {this.state.price} onChange = {this.handleChange}/>
+                <input type = "submit" value = "Search" onClick = {this.selectByDessertPrice}/>
+                </LabelStyle>
+            </DivStyle>
+            <DivStyle>
+                <LabelStyle>Fill in the information to insert a new dessert into database.:<br/>
+                dessert Name:<input type="text" name="dessertname1" className="form-control" value = {this.state.dessertname1} onChange = {this.handleChange}/>
+                dessert Price:<input type="text" name="dessertprice1" className="form-control" value = {this.state.dessertprice1} onChange = {this.handleChange}/>
+                <input type = "submit" value = "Insert" onClick = {this.insertDessert}/>
+                </LabelStyle>
+            </DivStyle> 
+            <DivStyle>
+                <LabelStyle>Input the Dessert Name, then fill the dessert price to update the information.:<br/>
+                dessert Name:<input type="text" name="dessertname2" className="form-control" value = {this.state.dessertname2} onChange = {this.handleChange}/>
+                dessert Price:<input type="text" name="dessertprice2" className="form-control" value = {this.state.dessertprice2} onChange = {this.handleChange}/>
+                <input type = "submit" value = "Insert" onClick = {this.updateDessert}/>
+                </LabelStyle>
+            </DivStyle> 
+            <DivStyle>
+                <LabelStyle>Input the Dessert Name that you want to delete:<br/>
+                <input type="text" name="dessertname3" className="form-control" value = {this.state.dessertname3} onChange = {this.handleChange}/>
+                <input type = "submit" value = "Delete" onClick = {this.deleteDessert}/>
                 </LabelStyle>
             </DivStyle>    
             </div>  

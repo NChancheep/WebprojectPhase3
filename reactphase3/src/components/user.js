@@ -91,6 +91,11 @@ class UserSection extends React.Component
     async selectByUserId() {
         console.log(this.state.id)
         let user 
+
+        
+    }
+    async selectByUserId() {
+        console.log(this.state.id)
         const res = await (await fetch("http://localhost:3030/admin/search&/User/" + this.state.id, {
             method: 'GET'
         })).json();
@@ -98,6 +103,8 @@ class UserSection extends React.Component
         user = res.data;
         document.getElementById("byUserId").innerHTML = `Username: ${user.username} | Role: ${user.role} | Log: ${user.log} | [Name: ${user.firstname} ${user.lastname}] | Address: ${user.address} | Age: ${user.age} | Preferences: ${user.preferences} | Email: ${user.email}`;
         return `Username: ${user.username} | Role: ${user.role} | Log: ${user.log} | [Name: ${user.firstname} ${user.lastname}] | Address: ${user.address} | Age: ${user.age} | Preferences: ${user.preferences} | Email: ${user.email}`;
+        let user = res.data;
+        // document.getElementById("byUserId").innerHTML = `Username: ${user.username} | Role: ${user.role} | Log: ${user.log} | [Name: ${user.firstname} ${user.lastname}] | Address: ${user.address} | Age: ${user.age} | Preferences: ${user.preferences} | Email: ${user.email}`;
     }
 
     async insertUser() {
@@ -122,6 +129,7 @@ class UserSection extends React.Component
         console.log(res.data);
         document.getElementById("insertUserResult").innerHTML = res.message;
         return res.message;
+
     }
     async updateUser() {
         let info = {
@@ -144,8 +152,7 @@ class UserSection extends React.Component
             body: JSON.stringify(info)
         })).json();
         console.log(res.data)
-        document.getElementById("updateUserResult").innerHTML = res.message;
-        return res.massage;
+
     }
 
     async deleteUser() {
@@ -157,8 +164,7 @@ class UserSection extends React.Component
             body: JSON.stringify({login_id: this.state.id3, dummy: "test"})
         })).json();
         console.log(res)
-        document.getElementById("deleteUserResult").innerHTML = res.message;
-        return res.massage;
+
     }
 
     render()
@@ -246,6 +252,53 @@ class UserSection extends React.Component
                     <br/>
                     <Button type = "submit" value = "delete" onClick = {this.deleteUser}>Search</Button>
                     <div id = "deleteUserResult"></div>
+
+                <DivStyle>
+                    <H1Style>User Section</H1Style>
+                        <LabelStyle>Search for all user!:
+                        <input type = "submit" value = "Search" onClick = {this.searchAllUser}/>
+                        </LabelStyle>
+                </DivStyle>   
+                <DivStyle>
+                    <LabelStyle>Input the User ID to find more information!:
+                    <input type="text" name="id" className="form-control" value = {this.state.id} onChange = {this.handleChange}/>
+                    <input type = "submit" value = "Search" onClick = {this.selectByUserId}/>
+                    </LabelStyle>
+                </DivStyle> 
+                <DivStyle>
+                    <H1Style>Fill in the information to insert a new user into database.</H1Style>
+                    <LabelStyle>
+                    user:<input type="text" name="username1" className="form-control" value = {this.state.username1} onChange = {this.handleChange}/>
+                    password:<input type="text" name="password1" className="form-control" value = {this.state.password1} onChange = {this.handleChange}/>
+                    Firstname:<input type="text" name="firstname1" className="form-control" value = {this.state.firstname1} onChange = {this.handleChange}/>
+                    Lastname:<input type="text" name="lastname1" className="form-control" value = {this.state.lastname1} onChange = {this.handleChange}/>
+                    Address:<input type="text" name="address1" className="form-control" value = {this.state.address1} onChange = {this.handleChange}/>
+                    Age:<input type="text" name="age1" className="form-control" value = {this.state.age1} onChange = {this.handleChange}/>
+                    Preferences:<input type="text" name="preferences1" className="form-control" value = {this.state.preferences1} onChange = {this.handleChange}/>
+                    Email:<input type="text" name="email1" className="form-control" value = {this.state.email1} onChange = {this.handleChange}/>
+                    <input type = "submit" value = "Insert" onClick = {this.insertUser}/>
+                    </LabelStyle>
+                </DivStyle>   
+                <DivStyle>
+                    <H1Style>Input the User ID, then fill the information that you want to update.</H1Style>
+                    <LabelStyle>
+                    user id:<input type="text" name="id2" className="form-control" value = {this.state.id2} onChange = {this.handleChange}/>
+                    user:<input type="text" name="username2" className="form-control" value = {this.state.username2} onChange = {this.handleChange}/>
+                    password:<input type="text" name="password2" className="form-control" value = {this.state.password2} onChange = {this.handleChange}/>
+                    Firstname:<input type="text" name="firstname2" className="form-control" value = {this.state.firstname2} onChange = {this.handleChange}/>
+                    Lastname:<input type="text" name="lastname2" className="form-control" value = {this.state.lastname2} onChange = {this.handleChange}/>
+                    Address:<input type="text" name="address2" className="form-control" value = {this.state.address2} onChange = {this.handleChange}/>
+                    Age:<input type="text" name="age2" className="form-control" value = {this.state.age2} onChange = {this.handleChange}/>
+                    Preferences:<input type="text" name="preferences2" className="form-control" value = {this.state.preferences2} onChange = {this.handleChange}/>
+                    Email:<input type="text" name="email2" className="form-control" value = {this.state.email2} onChange = {this.handleChange}/>
+                    <input type = "submit" value = "Update" onClick = {this.updateUser}/>
+                    </LabelStyle>
+                </DivStyle> 
+                <DivStyle>
+                    <H1Style>Input the User ID that you want to delete</H1Style>
+                    <LabelStyle>
+                    user id:<input type="text" name="id3" className="form-control" value = {this.state.id3} onChange = {this.handleChange}/>
+                    <input type = "submit" value = "delete" onClick = {this.deleteUser}/>
                     </LabelStyle>
                 </DivStyle>                  
             </div>
