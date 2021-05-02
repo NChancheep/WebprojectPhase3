@@ -153,19 +153,16 @@ class DessertSection extends React.Component
         res.data.forEach(Dessert => {
             localStorage.setItem("productName", Dessert.Dessert_Name);
             localStorage.setItem("productPrice", Dessert.Dessert_Price);
+            if(Dessert.Dessert_Pic == "" || Dessert.Dessert_Pic == null){
+                localStorage.setItem("productPic", "https://i.pinimg.com/originals/4b/45/6c/4b456c02c9ab0835d9f97482f95a2873.png");
+            }
+            else {
+                localStorage.setItem("productPic", Dessert.Dessert_Pic);
+            }
         });
-        // console.log(res.data.Dessert_Name);
-        // console.log(res.data.Dessert_Price);
-        // localStorage.setItem("productName", res.data.Dessert_Name);
-        // localStorage.setItem("productPrice", res.data.Dessert_Price);
+        
         window.location.assign("http://localhost:3000/results");
-        // let lists = `<ul>`;
-        // res.data.forEach(Dessert => {
-        //     lists += `<li>Dessert Name: ${Dessert.Dessert_Name} | Dessert Price: ${Dessert.Dessert_Price}</li>`
-        // });
-        // lists += `</ul>`;
-        // document.getElementById("byDessertName").innerHTML = lists;
-        // return lists;
+
 
     }
     render()
@@ -186,7 +183,7 @@ class DessertSection extends React.Component
                 <h1>Input drink name.</h1>
                 <p>Input dessert Name to find more information.</p>
                 <input type="text" name="name" className="form-control" value = {this.state.name} onChange = {this.handleChange}/>
-                <Button type = "submit" value = "Search" onClick = {this.selectByDessertName}>Search</Button>
+                <Button type = "submit" value = "Search" onClick = {this.selectByDessertName}>Search by name</Button>
                 <div id = "byDessertName"></div>
                 </LabelStyle>
             </DivStyle> 
@@ -195,7 +192,7 @@ class DessertSection extends React.Component
                 <h1>Input information of dessert.</h1>
                 <p>Input Dessert Price to find more information.</p>
                 <input type="text" name="price" className="form-control" value = {this.state.price} onChange = {this.handleChange}/>
-                <Button type = "submit" value = "Search" onClick = {this.selectByDessertPrice}>Search</Button>
+                <Button type = "submit" value = "Search" onClick = {this.selectByDessertPrice}>Search by price</Button>
                 <div id = "byDessertPrice"></div>
                 </LabelStyle>
             </DivStyle>
@@ -205,7 +202,7 @@ class DessertSection extends React.Component
                 <p>Fill in the information to insert a new dessert into database.</p>
                 dessert Name:<input type="text" name="dessertname1" className="form-control" value = {this.state.dessertname1} onChange = {this.handleChange}/>
                 dessert Price:<input type="text" name="dessertprice1" className="form-control" value = {this.state.dessertprice1} onChange = {this.handleChange}/>
-                <Button type = "submit" value = "Insert" onClick = {this.insertDessert}>Search</Button>
+                <Button type = "submit" value = "Insert" onClick = {this.insertDessert}>Insert</Button>
                 <div id = "insertDessertResult"></div>
                 </LabelStyle>
             </DivStyle> 
@@ -215,7 +212,7 @@ class DessertSection extends React.Component
                 <p>Input the dessert Name, then fill the dessert price to update the information.</p>
                 dessert Name:<input type="text" name="dessertname2" className="form-control" value = {this.state.dessertname2} onChange = {this.handleChange}/>
                 dessert Price:<input type="text" name="dessertprice2" className="form-control" value = {this.state.dessertprice2} onChange = {this.handleChange}/>
-                <Button type = "submit" value = "Insert" onClick = {this.updateDessert}>Search</Button>
+                <Button type = "submit" value = "Insert" onClick = {this.updateDessert}>Update</Button>
                 <div id = "updateDessertResult"></div>
                 </LabelStyle>
             </DivStyle> 
@@ -224,7 +221,7 @@ class DessertSection extends React.Component
                 <h1>Delete information.</h1>
                 <p>Input the Dessert Name that you want to delete.</p>
                 <input type="text" name="dessertname3" className="form-control" value = {this.state.dessertname3} onChange = {this.handleChange}/>
-                <Button type = "submit" value = "Delete" onClick = {this.deleteDessert}>Search</Button>
+                <Button type = "submit" value = "Delete" onClick = {this.deleteDessert}>Delete</Button>
                 <div id = "deleteDessertResult"></div>
                 </LabelStyle>
             </DivStyle>    

@@ -155,7 +155,12 @@ class FoodSection extends React.Component
         res.data.forEach(Food => {
             localStorage.setItem("productName", Food.Food_Name);
             localStorage.setItem("productPrice", Food.Food_Price);
-            
+            if(Food.Food_Pic == "" || Food.Food_Pic == null){
+                localStorage.setItem("productPic", "http://cdn.onlinewebfonts.com/svg/img_174839.png");
+            }
+            else {
+                localStorage.setItem("productPic", Food.Food_Pic);
+            }
         });
   
         window.location.assign("http://localhost:3000/results");
@@ -178,7 +183,7 @@ class FoodSection extends React.Component
                         <h1>Input food name.</h1>
                         <p>Input Food Name to find more information.</p>
                         <input type="text" name="name" className="form-control" value = {this.state.name} onChange = {this.handleChange}/>
-                        <Button type = "submit" value = "Search" onClick = {this.selectByFoodName}>Search</Button>
+                        <Button type = "submit" value = "Search" onClick = {this.selectByFoodName}>Search by name</Button>
                         <div id = "byFoodName"></div>
                         </LabelStyle>
                 </DivStyle>   
@@ -187,7 +192,7 @@ class FoodSection extends React.Component
                         <h1>Input information of food.</h1>
                         <p>Input Food Price to find more information.</p>
                         <input type="text" name="price" className="form-control" value = {this.state.price} onChange = {this.handleChange}/>
-                        <Button type = "submit" value = "Find" onClick = {this.selectByFoodPrice}>Search</Button>
+                        <Button type = "submit" value = "Find" onClick = {this.selectByFoodPrice}>Search by price</Button>
                         <div id = "byFoodPrice"></div>
                         </LabelStyle>
                 </DivStyle>   
@@ -197,7 +202,7 @@ class FoodSection extends React.Component
                         <p>Fill in the information to insert a new food into database.</p>
                         Food Name:<input type="text" name="foodname1" className="form-control" value = {this.state.foodname1} onChange = {this.handleChange}/>
                         Food Price:<input type="text" name="foodprice1" className="form-control" value = {this.state.foodprice1} onChange = {this.handleChange}/>
-                        <Button type = "submit" value = "Insert" onClick = {this.insertFood}>Search</Button>
+                        <Button type = "submit" value = "Insert" onClick = {this.insertFood}>Insert</Button>
                         <div id = "insertFoodResult"></div>
                         </LabelStyle>
                 </DivStyle>  
@@ -207,7 +212,7 @@ class FoodSection extends React.Component
                         <p>Input the Food Name, then fill the food price to update the information.:</p>
                         Food Name:<input type="text" name="foodname2" className="form-control" value = {this.state.foodname2} onChange = {this.handleChange}/>
                         Food Price:<input type="text" name="foodprice2" className="form-control" value = {this.state.foodprice2} onChange = {this.handleChange}/>
-                        <Button type = "submit" value = "Insert" onClick = {this.updateFood}>Search</Button>
+                        <Button type = "submit" value = "Insert" onClick = {this.updateFood}>Update</Button>
                         <div id = "updateFoodResult"></div>
                         </LabelStyle>
                 </DivStyle>  
@@ -216,14 +221,14 @@ class FoodSection extends React.Component
                         <h1>Delete information.</h1>
                         <p>Input the Food Name that you want to delete.</p>
                         <input type="text" name="foodname3" className="form-control" value = {this.state.foodname3} onChange = {this.handleChange}/>
-                        <Button type = "submit" value = "Insert" onClick = {this.deleteFood}>Search</Button>
+                        <Button type = "submit" value = "Insert" onClick = {this.deleteFood}>Delete</Button>
                         <div id = "deleteFoodResult"></div>
                         </LabelStyle>
                 </DivStyle>  
                 <DivStyle>
                     <LabelStyle>
                     <h1>go to the page for the information</h1>
-                    <p>Input the drink name to know you want (you can find the userID by use select all function above)</p>
+                    <p>Input the food name to know you want (you can find the userID by use select all function above)</p>
                     <input type="text" name="findname" className="form-control" value = {this.state.findname} onChange = {this.handleChange}/>
                     <br/>
                     <Button type = "submit" value = "Search" onClick = {this.selectByfindname}>Search</Button>

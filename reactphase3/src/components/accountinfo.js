@@ -2,30 +2,36 @@ import React from 'react';
 import styled from 'styled-components';
 
 const H1Style = styled.h1 `
-    margin: 20px;
-    text-align: Center;
+    margin: 1%;
+    text-align: center;
     background-color: gray;
     color: white;
-    padding: 20px;
+    width: 100%;
+    font-size: 100%;
+    padding-top: 5%;
 `;
 const DivStyle = styled.div `
+    background-color: Black;
     display: flex;
-    flex-direction: row;
-    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-top: 10%;
+    margin-left: 30%;
+    margin-right: 30%;
+`;
+const H2Style = styled.h2 `
+    text-align: center;
+    background-color: Black;
+    color: white;
+    width: 100%;
+    padding: 5%;
 `;
 
 const LabelStyle = styled.label `
     margin: 30px 20px;
 `;
 
-const Button = styled.button `
-  background-color: black;
-  color: white;
-  font-size: 20px;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 10px 0px;
-  cursor: pointer;
+const cardBox = `
+    
 `;
 
 class accountinfo extends React.Component {
@@ -59,15 +65,30 @@ class accountinfo extends React.Component {
             const address = localStorage.getItem('accaddress');
             const age = localStorage.getItem('accage');
             const role = localStorage.getItem('accrole');
+            const pic = localStorage.getItem('accPic');
             // console.log(fName)
             return (
-                <h1>kuy jump this is accountinfo page</h1>
+            <div>
+                <DivStyle>
+                    <H1Style>
+                        <img src = {pic}  alt="new" style={{width:"40%"}} />
+                        <H2Style>USER INFORMATION</H2Style>
+                        <b>{fName} {lName}</b>
+                        <p>Age: {age}</p>
+                        <p>Email: {Email}</p>
+                        <p>Address: {address}</p>
+                        <p>Role: {role}</p> 
+                    </H1Style> 
+                </DivStyle>
+            </div>
             );
         } else {
             alert("login first");
             window.location.assign("http://localhost:3000/");
 
         }
+        
     }
+    
 }
 export default accountinfo;

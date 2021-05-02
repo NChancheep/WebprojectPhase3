@@ -177,8 +177,15 @@ class UserSection extends React.Component
         localStorage.setItem("accaddress", user.address);
         localStorage.setItem("accage", user.age);
         localStorage.setItem("accrole", user.role);
+        if(user.pic == null || user.pic == ""){
+            localStorage.setItem("accPic", "https://i.pinimg.com/originals/89/64/99/8964998576cfac440b3a14df748fc670.png");
+        }
+        else {
+            localStorage.setItem("accPic", user.pic);
+        }
+        
         alert("redirect to account information of "+user.firstname+" "+user.lastname);
-        window.location.assign("http://localhost:3000/accountinfo");
+        // window.location.assign("http://localhost:3000/accountinfo");
 
         // document.getElementById("byUserId").innerHTML = `Username: ${user.username} | Role: ${user.role} | Log: ${user.log} | [Name: ${user.firstname} ${user.lastname}] | Address: ${user.address} | Age: ${user.age} | Preferences: ${user.preferences} | Email: ${user.email}`;
         // return `Username: ${user.username} | Role: ${user.role} | Log: ${user.log} | [Name: ${user.firstname} ${user.lastname}] | Address: ${user.address} | Age: ${user.age} | Preferences: ${user.preferences} | Email: ${user.email}`;
@@ -203,7 +210,7 @@ class UserSection extends React.Component
                     <p>Input the User ID to find more information (Just ID!!)</p>
                     <input type="text" name="id" className="form-control" value = {this.state.id} onChange = {this.handleChange}/>
                     <br/>
-                    <Button type = "submit" value = "Search" onClick = {this.selectByUserId}>Search</Button>
+                    <Button type = "submit" value = "Search" onClick = {this.selectByUserId}>Search by ID</Button>
                     <div id = "byUserId"></div>
                     </LabelStyle>
                 </DivStyle> 
@@ -228,7 +235,7 @@ class UserSection extends React.Component
                     <br/>
                     Email<input type="text" name="email1" className="form-control" value = {this.state.email1} onChange = {this.handleChange}/>
                     <br/>
-                    <Button type = "submit" value = "Insert" onClick = {this.insertUser}>Search</Button>
+                    <Button type = "submit" value = "Insert" onClick = {this.insertUser}>Insert</Button>
                     <div id = "insertUserResult"></div>
                     </LabelStyle>
                 </DivStyle>   
@@ -255,7 +262,7 @@ class UserSection extends React.Component
                     <br/>
                     Email<input type="text" name="email2" className="form-control" value = {this.state.email2} onChange = {this.handleChange}/>
                     <br/>
-                    <Button type = "submit" value = "Update" onClick = {this.updateUser}>Search</Button>
+                    <Button type = "submit" value = "Update" onClick = {this.updateUser}>Update</Button>
                     <div id = "updateUserResult"></div>
                     </LabelStyle>
                 </DivStyle> 
@@ -266,7 +273,7 @@ class UserSection extends React.Component
                     <p>Input the User ID that you want to delete.</p>
                     user id<input type="text" name="id3" className="form-control" value = {this.state.id3} onChange = {this.handleChange}/>
                     <br/>
-                    <Button type = "submit" value = "delete" onClick = {this.deleteUser}>Search</Button>
+                    <Button type = "submit" value = "delete" onClick = {this.deleteUser}>Delete</Button>
                     <div id = "deleteUserResult"></div>
                     </LabelStyle>
                 </DivStyle>        
