@@ -155,7 +155,12 @@ class FoodSection extends React.Component
         res.data.forEach(Food => {
             localStorage.setItem("productName", Food.Food_Name);
             localStorage.setItem("productPrice", Food.Food_Price);
-            
+            if(Food.Food_Pic == "" || Food.Food_Pic == null){
+                localStorage.setItem("productPic", "http://cdn.onlinewebfonts.com/svg/img_174839.png");
+            }
+            else {
+                localStorage.setItem("productPic", Food.Food_Pic);
+            }
         });
   
         window.location.assign("http://localhost:3000/results");

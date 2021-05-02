@@ -65,13 +65,13 @@ class accountinfo extends React.Component {
             const address = localStorage.getItem('accaddress');
             const age = localStorage.getItem('accage');
             const role = localStorage.getItem('accrole');
-            const pre = localStorage.getItem('accPre');
+            const pic = localStorage.getItem('accPic');
             // console.log(fName)
             return (
             <div>
                 <DivStyle>
                     <H1Style>
-                        <img src = {pre}  alt="new" style={{width:"40%"}} />
+                        <img src = {pic}  alt="new" style={{width:"40%"}} />
                         <H2Style>USER INFORMATION</H2Style>
                         <b>{fName} {lName}</b>
                         <p>Age: {age}</p>

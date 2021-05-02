@@ -53,12 +53,13 @@ class result extends React.Component {
         if (login) {
             const pName = localStorage.getItem('productName');
             const pPrice = localStorage.getItem('productPrice');
+            const pPic = localStorage.getItem('productPic');
             console.log(pName)
             return (
                 <div>
                 <DivStyle>
                     <H1Style>
-                        <img src="https://www.flaticon.com/svg/vstatic/svg/1365/1365503.svg?token=exp=1619881435~hmac=00205aaea9d7453c102051905a4717d3" alt="new" style={{width:"40%"}} />
+                    <img src = {pPic}  alt="new" style={{width:"40%"}} />
                         <H2Style>INFORMATION</H2Style>
                         <p>Name:{pName}</p>
                         <p>Price:{pPrice}</p>

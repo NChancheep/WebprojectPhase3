@@ -177,9 +177,15 @@ class UserSection extends React.Component
         localStorage.setItem("accaddress", user.address);
         localStorage.setItem("accage", user.age);
         localStorage.setItem("accrole", user.role);
-        localStorage.setItem("accPre", user.preferences);
+        if(user.pic == null || user.pic == ""){
+            localStorage.setItem("accPic", "https://i.pinimg.com/originals/89/64/99/8964998576cfac440b3a14df748fc670.png");
+        }
+        else {
+            localStorage.setItem("accPic", user.pic);
+        }
+        
         alert("redirect to account information of "+user.firstname+" "+user.lastname);
-        window.location.assign("http://localhost:3000/accountinfo");
+        // window.location.assign("http://localhost:3000/accountinfo");
 
         // document.getElementById("byUserId").innerHTML = `Username: ${user.username} | Role: ${user.role} | Log: ${user.log} | [Name: ${user.firstname} ${user.lastname}] | Address: ${user.address} | Age: ${user.age} | Preferences: ${user.preferences} | Email: ${user.email}`;
         // return `Username: ${user.username} | Role: ${user.role} | Log: ${user.log} | [Name: ${user.firstname} ${user.lastname}] | Address: ${user.address} | Age: ${user.age} | Preferences: ${user.preferences} | Email: ${user.email}`;

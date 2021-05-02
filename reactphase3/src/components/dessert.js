@@ -153,19 +153,16 @@ class DessertSection extends React.Component
         res.data.forEach(Dessert => {
             localStorage.setItem("productName", Dessert.Dessert_Name);
             localStorage.setItem("productPrice", Dessert.Dessert_Price);
+            if(Dessert.Dessert_Pic == "" || Dessert.Dessert_Pic == null){
+                localStorage.setItem("productPic", "https://i.pinimg.com/originals/4b/45/6c/4b456c02c9ab0835d9f97482f95a2873.png");
+            }
+            else {
+                localStorage.setItem("productPic", Dessert.Dessert_Pic);
+            }
         });
-        // console.log(res.data.Dessert_Name);
-        // console.log(res.data.Dessert_Price);
-        // localStorage.setItem("productName", res.data.Dessert_Name);
-        // localStorage.setItem("productPrice", res.data.Dessert_Price);
+        
         window.location.assign("http://localhost:3000/results");
-        // let lists = `<ul>`;
-        // res.data.forEach(Dessert => {
-        //     lists += `<li>Dessert Name: ${Dessert.Dessert_Name} | Dessert Price: ${Dessert.Dessert_Price}</li>`
-        // });
-        // lists += `</ul>`;
-        // document.getElementById("byDessertName").innerHTML = lists;
-        // return lists;
+    
 
     }
     render()

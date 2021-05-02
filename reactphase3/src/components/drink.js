@@ -155,6 +155,12 @@ class DrinkSection extends React.Component
         res.data.forEach(Drink => {
             localStorage.setItem("productName", Drink.Drink_Name);
             localStorage.setItem("productPrice", Drink.Drink_Price);
+            if(Drink.Drink_Pic == "" || Drink.Drink_Pic == null){
+                localStorage.setItem("productPic", "https://img2.thaipng.com/20180426/ppq/kisspng-cocktail-coconut-water-drink-clip-art-coconuts-clipart-5ae225bd76f4b7.1952205515247702374873.jpg");
+            }
+            else {
+                localStorage.setItem("productPic", Drink.Drink_Pic);
+            }
             // lists += `<li>Drink Name: ${Drink.Drink_Name} | Drink Price: ${Drink.Drink_Price}</li>`
             window.location.assign("http://localhost:3000/results");
         });
